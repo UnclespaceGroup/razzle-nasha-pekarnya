@@ -1,0 +1,7 @@
+
+@font-face {
+    font-family: 'LC Chalk';
+    src: url('LCChalk.ttf');
+    src: local('LCChalk'), local('LCChalk'),
+    url('LCChalk.ttf') format('truetype');
+}

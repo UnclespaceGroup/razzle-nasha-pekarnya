@@ -1,5 +1,5 @@
 import React from 'react'
-import 'containers/PageHome/Home.css'
+import 'containers/PageHome/Home.scss'
 import { useRemoteData } from '@aic/react-remote-data-provider'
 import useDevice from 'hooks/useDevice'
 
