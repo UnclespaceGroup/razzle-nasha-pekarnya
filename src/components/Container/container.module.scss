@@ -1,7 +1,9 @@
-.isLarge {
+@import "styles/_variables";
 
+.isLarge {
+  composes: container;
 }
 
 .isSmall {
-
+  composes: container-m;
 }

@@ -1,8 +1,9 @@
 import React from 'react'
-import css from 'containers/PageHome/Home.module.scss'
+import css from 'containers/PageHome/home.module.scss'
 import { useRemoteData } from '@aic/react-remote-data-provider'
 import useDevice from 'hooks/useDevice'
 import FETCH_PRODUCTS from 'api/fetch/FETCH_PRODUCTS'
+import Header from 'containers/Header/Header'
 
 function Home () {
   const { response } = useRemoteData(FETCH_PRODUCTS, [])
@@ -12,7 +13,7 @@ function Home () {
 
   return (
     <div className={css[currentDevice]}>
-      <h2>Сборка Unclespace</h2>
+      <Header />
     </div>
   )
 }
