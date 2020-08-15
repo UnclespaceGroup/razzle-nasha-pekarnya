@@ -19,6 +19,7 @@ const BgImage = ({ img, className, children, local }) => {
 BgImage.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
-  local: PropTypes.bool
+  local: PropTypes.bool,
+  img: PropTypes.any
 }
 export default React.memo(BgImage)
