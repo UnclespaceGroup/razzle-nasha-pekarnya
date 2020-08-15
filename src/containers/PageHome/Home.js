@@ -1,24 +1,20 @@
 import React from 'react'
-import 'containers/PageHome/Home.scss'
+import css from 'containers/PageHome/Home.module.scss'
 import { useRemoteData } from '@aic/react-remote-data-provider'
 import useDevice from 'hooks/useDevice'
+import FETCH_PRODUCTS from 'api/fetch/FETCH_PRODUCTS'
 
-function Home() {
-  const { response } = useRemoteData({
-    request: {
-      url: 'http://unclespace.beget.tech/products'
-    }
-  })
+function Home () {
+  const { response } = useRemoteData(FETCH_PRODUCTS, [])
   console.log(response)
 
-  const device = useDevice()
-  console.log(device)
+  const { currentDevice } = useDevice()
 
   return (
-    <div className="Home">
+    <div className={css[currentDevice]}>
       <h2>Сборка Unclespace</h2>
     </div>
   )
 }
 
-export default Home;
+export default Home
