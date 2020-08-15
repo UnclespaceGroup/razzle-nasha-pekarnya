@@ -3,5 +3,17 @@
 .isLarge {
   background: #E5E5E5;
   min-height: 100vh;
+
+  .products {
+    margin: 12rem auto 3.2rem;
+  }
+
+  .moreBtn {
+    text-align: center;
+  }
+
+  .banner {
+    margin: 6.4rem 0;
+  }
 }
 

@@ -29,7 +29,7 @@ const TopBanner = ({ className }) => {
           </div>
         </div>
       </Container>
-      <BgImage img='/api/image-home-banner.jpg' className={css.img} />
+      <BgImage img='/api/image-home-banner.jpg' local className={css.img} />
     </div>
   )
 }

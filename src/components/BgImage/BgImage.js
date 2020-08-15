@@ -1,19 +1,24 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 import css from './BgImage.module.scss'
+import getImgName from 'components/utils/getImgName'
 
-const BgImage = ({ img, className, children }) => (
-  <div
-    style={{ backgroundImage: `url(${img})` }}
-    className={cn(css.container, className)}
-  >
-    {children}
-  </div>
-)
+const BgImage = ({ img, className, children, local }) => {
+  const imgUrl = useMemo(() => local ? img : getImgName(img), [img, local])
+
+  return (
+    <div
+      style={{ backgroundImage: `url(${imgUrl})` }}
+      className={cn(css.container, className)}
+    >
+      {children}
+    </div>
+  )
+}
 BgImage.propTypes = {
-  img: PropTypes.string,
   className: PropTypes.string,
-  children: PropTypes.node
+  children: PropTypes.node,
+  local: PropTypes.bool
 }
 export default React.memo(BgImage)

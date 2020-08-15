@@ -1,0 +1,30 @@
+.isLarge {
+  color: white;
+  border-radius: .8rem;
+  overflow: hidden;
+
+  .wrapper {
+    background-color: rgba(0,0,0,0.4);
+    padding: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 38rem;
+    transition: all 200ms ease-in;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(0,0,0,0.6);
+    }
+  }
+
+  .title {
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+  }
+
+  .text {
+    font-size: 1.8rem;
+  }
+}
