@@ -30,7 +30,7 @@
     "react/jsx-sort-default-props": "off",
     "react/jsx-sort-props": "off",
     "react/boolean-prop-naming": "error",
-    "react/button-has-type": "error",
+    "react/button-has-type": "off",
     "react/destructuring-assignment": "off",
     "react/no-access-state-in-setstate": "off",
     "react/no-danger-with-children": "off",

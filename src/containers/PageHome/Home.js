@@ -4,6 +4,7 @@ import { useRemoteData } from '@aic/react-remote-data-provider'
 import useDevice from 'hooks/useDevice'
 import FETCH_PRODUCTS from 'api/fetch/FETCH_PRODUCTS'
 import Header from 'containers/Header/Header'
+import TopBanner from 'components/TopBanner/TopBanner'
 
 function Home () {
   const { response } = useRemoteData(FETCH_PRODUCTS, [])
@@ -14,6 +15,7 @@ function Home () {
   return (
     <div className={css[currentDevice]}>
       <Header />
+      <TopBanner />
     </div>
   )
 }
