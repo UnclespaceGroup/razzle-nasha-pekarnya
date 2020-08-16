@@ -7,8 +7,8 @@ import { useRemoteData } from '@aic/react-remote-data-provider'
 import FETCH_PRODUCTS from 'api/fetch/FETCH_PRODUCTS'
 
 const useProducts = () => {
-  const [cards, setCards] = React.useState([])
   const { response: items } = useRemoteData(FETCH_PRODUCTS, [])
+  const [cards, setCards] = React.useState([])
 
   const dispatch = useDispatch()
 

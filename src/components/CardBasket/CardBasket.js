@@ -34,7 +34,7 @@ const CardBasket = ({ img, title, discountPrice, count, onChange, className }) =
   )
 }
 CardBasket.propTypes = {
-  img: PropTypes.string,
+  img: PropTypes.any,
   title: PropTypes.node,
   discountPrice: PropTypes.node,
   count: PropTypes.number,

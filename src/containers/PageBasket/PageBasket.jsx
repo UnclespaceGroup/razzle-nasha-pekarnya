@@ -3,6 +3,7 @@ import React, { useMemo } from 'react'
 import Header from 'containers/Header/Header'
 import Bg from 'components/Bg/Bg'
 import useProducts from 'hooks/useProducts'
+import _ from 'lodash'
 import Button from 'components/Button/Button'
 import { PAGE_ORDER } from 'constants/routes'
 import { getFullPrice } from 'utils/priceUtils'
@@ -20,6 +21,11 @@ const PageBasket = () => {
   const basket = useSelector(state => state.basket)
   const price = useMemo(() => getFullPrice(basket), [basket])
 
+  const selectedCards = useMemo(() =>
+    _.filter(cards, card => card.count > 0),
+  [cards]
+  )
+
   return (
     <Bg color='grey' className={css[currentDevice]}>
       <Header />
@@ -29,12 +35,12 @@ const PageBasket = () => {
           <h1 className={css.mainTitle}>Корзина заказа</h1>
         </div>
         {
-          !cards ? <div />
-            : cards.length
+          !selectedCards ? <div />
+            : selectedCards.length
               ? (
                 <div>
                   {
-                    cards.map((item, key) => (
+                    _.map(selectedCards, (item, key) => (
                       <CardBasket
                         key={key}
                         className={css.card}
