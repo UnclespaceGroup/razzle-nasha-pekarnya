@@ -46,6 +46,6 @@ const SideHeader = ({ isOpen, onClose }) => {
   )
 }
 SideHeader.propTypes = {
-  isOpen: PropTypes.string
+  isOpen: PropTypes.bool
 }
 export default React.memo(SideHeader)
