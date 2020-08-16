@@ -7,6 +7,7 @@ import css from './header.module.scss'
 import { MdMenu, MdPhone } from 'react-icons/md'
 import Container from 'components/Container/Container'
 import DesktopOnly from 'utils/DesktopOnly'
+import Button from 'components/Button/Button'
 
 const Header = ({ className }) => {
   const { currentDevice, isSmall } = useDevice()
@@ -25,9 +26,14 @@ const Header = ({ className }) => {
           </div>
           <img className={css.logo} src='/images/logo-brown.svg' alt='' />
           <div className={css.right}>
-            <a href='tel:8 (800) 535 35 35' className={css.phone}>
-              {isSmall ? <MdPhone /> : '8 (800) 535 35 35'}
-            </a>
+            <DesktopOnly>
+              <a href='tel:8 (800) 535 35 35' className={css.phone}>
+                {isSmall ? <MdPhone /> : '8 (800) 535 35 35'}
+              </a>
+            </DesktopOnly>
+            <Button className={css.btnBasket}>
+              15 000 руб
+            </Button>
           </div>
         </Container>
         <div className={css.bootom} />

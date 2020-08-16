@@ -65,12 +65,33 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  width: 40%;
+}
+
+.isSmall .left {
   width: 30%;
 }
 
 .right {
-  width: 30%;
+  width: 40%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+
+.isSmall .right{
+  width: 30%;
+}
+
+.btnBasket {
+  margin-left: 2.4rem;
+  font-weight: 500;
+  font-size: 2.4rem;
+  padding: 0 2.4rem;
+}
+
+.isSmall .btnBasket {
+  width: 2rem;
+  font-size: 1.6rem;
+  height: 3rem;
 }
