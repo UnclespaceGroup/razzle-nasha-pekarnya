@@ -5,7 +5,7 @@ import BgImage from 'components/BgImage/BgImage'
 import css from './footer.module.scss'
 import Container from 'components/Container/Container'
 import useDevice from 'hooks/useDevice'
-import { items } from './data'
+import { items } from 'constants/navigation'
 import { Link } from 'react-router-dom'
 
 const Footer = () => {

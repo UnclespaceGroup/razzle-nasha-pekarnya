@@ -9,12 +9,13 @@ import Container from 'components/Container/Container'
 import Banner from 'components/Banner/Banner'
 import ContainerNews from 'containers/News/News'
 import css from 'containers/PageHome/home.module.scss'
+import Bg from 'components/Bg/Bg'
 
 function Home () {
   const { currentDevice } = useDevice()
 
   return (
-    <div className={cn(css[currentDevice], css.wrapper)}>
+    <Bg color='grey' className={cn(css[currentDevice], css.wrapper)}>
       <Header />
       <TopBanner />
       <Products
@@ -26,7 +27,7 @@ function Home () {
       </Container>
       <Banner className={css.banner} />
       <ContainerNews title='Последние новости' />
-    </div>
+    </Bg>
   )
 }
 

@@ -3,13 +3,14 @@ import PropTypes from 'prop-types'
 import css from 'components/СontentConstructor/blocks/BlockImg/blockImg.module.scss'
 import Container from 'components/Container/Container'
 import useDevice from 'hooks/useDevice'
+import getImgName from 'utils/getImgName'
 
 const BlockImg = ({ title, img }) => {
   const { currentDevice } = useDevice()
   return (
     <Container className={css[currentDevice]}>
       <div className={css.block}>
-        <img src={img} className={css.img} alt='' />
+        <img src={getImgName(img)} className={css.img} alt='' />
         <div className={css.title}>{title}</div>
       </div>
     </Container>
