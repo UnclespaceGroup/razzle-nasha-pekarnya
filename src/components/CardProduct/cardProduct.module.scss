@@ -4,6 +4,12 @@
   border-radius: 1.6rem;
   overflow: hidden;
   cursor: pointer;
+  box-shadow: 0 .2rem .2rem rgba(0, 0, 0, 0.25);
+  transition: all 200ms ease-in;
+
+  &:hover {
+    box-shadow: 0 .4rem .4rem rgba(0, 0, 0, 0.25);
+  }
 }
 
 .img {
@@ -29,6 +35,16 @@
       background-color: rgba(242, 153, 74, .2);
     }
   }
+}
+
+.picker {
+  position: relative;
+  z-index: 10;
+  margin-top: -6.4rem;
+  padding-right: 2.4rem;
+  transform: translateY(3.2rem);
+  display: flex;
+  justify-content: flex-end;
 }
 
 .isSmall .img {

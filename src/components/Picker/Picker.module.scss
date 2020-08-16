@@ -1,0 +1,87 @@
+.container {
+  height: 6.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  border-radius: 3.2rem;
+  background-color: white;
+  transition: box-shadow 200ms ease-in;
+  box-shadow: 0 .1rem .4rem rgba(0, 0, 0, 0.25);
+
+  &:hover {
+    box-shadow: 0 .2rem .8rem rgba(0, 0, 0, 0.5);
+  }
+}
+
+.plus {
+  composes: container;
+  cursor: pointer;
+  width: 6.4rem;
+}
+.picker {
+  composes: container;
+  color: white;
+  background-color: orange;
+  width: 14rem;
+  position: relative;
+  overflow: hidden;
+}
+.sign {
+  transition: all 200ms ease-in;
+  cursor: pointer;
+  position: absolute;
+  width: 4rem;
+  top: 0;
+  bottom: 0;
+  font-size: 3rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signMinus {
+  composes: sign;
+  left: 0;
+  color: white;
+
+  &:hover {
+    background-color: #4F4F4F;
+  }
+}
+.signPlus {
+  composes: sign;
+  right: 0;
+  color: white;
+  &:hover {
+    background-color: #4F4F4F;
+  }
+}
+
+.black {
+  .container {
+    height: 5rem;
+    border-radius: 3.2rem;
+    background-color: #4F4F4F;
+    font-size: 2.4rem;
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  .picker {
+    width: 20rem;
+  }
+
+  .sign {
+    color: white;
+    width: 7rem;
+    font-size: 3rem;
+    font-weight: 400;
+
+    &:hover {
+      background-color: #828282;
+    }
+  }
+}
