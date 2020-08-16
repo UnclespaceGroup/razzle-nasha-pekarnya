@@ -7,13 +7,13 @@ import css from './cardProduct.module.scss'
 import useDevice from 'hooks/useDevice'
 import Picker from 'components/Picker/Picker'
 
-const CardProduct = ({ className, img, title, price }) => {
+const CardProduct = ({ className, img, title, price, ...pickerProps }) => {
   const { currentDevice } = useDevice()
   return (
     <div className={cn(css[currentDevice], css.container)}>
       <BgImage img={img} className={css.img} />
       <div className={css.picker}>
-        <Picker />
+        <Picker {...pickerProps} />
       </div>
       <div className={css.wrapper}>
         <h3 className={css.title}>{title}</h3>

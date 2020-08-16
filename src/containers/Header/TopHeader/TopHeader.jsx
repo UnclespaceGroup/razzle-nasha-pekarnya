@@ -9,7 +9,7 @@ import Button from 'components/Button/Button'
 import cn from 'classnames'
 import useDevice from 'hooks/useDevice'
 
-const TopHeader = ({ clickOpen }) => {
+const TopHeader = ({ clickOpen, price }) => {
   const { currentDevice, isSmall } = useDevice()
 
   return (
@@ -34,7 +34,7 @@ const TopHeader = ({ clickOpen }) => {
               </a>
             </DesktopOnly>
             <Button className={css.btnBasket}>
-            15 000 руб
+              {price}
             </Button>
           </div>
         </Container>

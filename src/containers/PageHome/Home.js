@@ -8,8 +8,8 @@ import Button from 'components/Button/Button'
 import Container from 'components/Container/Container'
 import Banner from 'components/Banner/Banner'
 import ContainerNews from 'containers/News/News'
-import css from 'containers/PageHome/home.module.scss'
 import Bg from 'components/Bg/Bg'
+import css from 'containers/PageHome/home.module.scss'
 
 function Home () {
   const { currentDevice } = useDevice()

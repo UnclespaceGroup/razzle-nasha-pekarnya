@@ -17,9 +17,9 @@ const Picker = ({ className, count = 0, onChange, variant }) => {
           )
           : (
             <div className={css.picker}>
-              <div className={css.signMinus} onClick={() => onChange(count - 1)}>-</div>
+              <button className={css.signMinus} onClick={() => onChange(count - 1)}>-</button>
               <div>{count}</div>
-              <div className={css.signPlus} onClick={addValue}>+</div>
+              <button className={css.signPlus} onClick={addValue}>+</button>
             </div>
           )
       }

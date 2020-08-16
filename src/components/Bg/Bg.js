@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import css from './Bg.module.scss'
+import cn from 'classnames'
 
-const Bg = ({ children, color }) => (
+const Bg = ({ children, color, className }) => (
   <div
-    className={css[color]}
+    className={cn(css[color], className)}
   >
     {children}
   </div>
