@@ -74,7 +74,8 @@ const useProducts = () => {
   , [cards])
 
   return {
-    cards: _cards
+    cards: _cards,
+    addBasket
   }
 }
 export default useProducts

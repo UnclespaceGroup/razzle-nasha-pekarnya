@@ -1,4 +1,6 @@
 import { axiosInstance } from 'api/axios/instance'
+import _ from 'lodash'
+import { PAGE_PRODUCTS } from 'constants/routes'
 
 const FETCH_PRODUCTS = {
   axiosInstance,
@@ -7,7 +9,12 @@ const FETCH_PRODUCTS = {
   },
   requestFunctions: {
     transformResponse: data => {
-      return JSON.parse(data)
+      const parsedData = JSON.parse(data)
+
+      return _.map(parsedData, item => ({
+        ...item,
+        to: PAGE_PRODUCTS + item.id
+      }))
     }
   }
 }

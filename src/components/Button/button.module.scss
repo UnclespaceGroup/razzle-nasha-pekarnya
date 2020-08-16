@@ -11,12 +11,17 @@
   border-radius: .4rem;
   transition: all 200ms ease-in;
 
-  svg {
-    margin-left: 2.4rem;
-  }
-
   &:hover {
     background-color: #e37e21;
+  }
+
+  svg:first-child {
+    width: 3.2rem;
+    height: 3.2rem;
+    margin-right: 2.4rem;
+  }
+  svg:last-child {
+    margin-left: 2.4rem;
   }
 }
 
