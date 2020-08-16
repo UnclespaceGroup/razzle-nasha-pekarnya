@@ -1,0 +1,86 @@
+@import "styles/_variables";
+
+.container {
+  margin-top: 4rem;
+  min-height: 100vh;
+  width: 94rem;
+}
+
+.header {
+  margin-bottom: 4.2rem;
+}
+
+.mainTitle {
+  margin-top: 2.4rem;
+  font-size: 3.6rem;
+  font-weight: 500;
+}
+
+.close {
+  display: block;
+  width: 4.8rem;
+  height: 4.8rem;
+  cursor: pointer;
+}
+
+.card {
+  margin-bottom: .8rem;
+}
+
+.footer {
+  margin-top: 4rem;
+  padding: 3.2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.price {
+  color: #828282;
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-right: 2.4rem;
+}
+
+.footerTitle {
+  font-size: 2.4rem;
+  font-weight: bold;
+  width: 40%;
+  margin-right: auto;
+}
+
+.isSmall {
+  .container {
+    @include container-m;
+    margin-top: 2.4rem;
+  }
+
+  .header {
+    margin-bottom: 4.2rem;
+  }
+
+  .mainTitle {
+    font-size: 2.4rem;
+    margin-top: 1.2rem;
+  }
+
+  .card {
+    margin-bottom: .8rem;
+  }
+
+  .priceBig {
+    font-weight: 500;
+    margin-bottom: 1.6rem;
+  }
+
+  .btn {
+    width: 25.8rem;
+  }
+
+  .footer {
+    padding: 3.2rem 0;
+  }
+
+  .footerTitle {
+  }
+}

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import css from './backLink.module.scss'
 import useDevice from 'hooks/useDevice'
 import { MdArrowBack } from 'react-icons/md'
@@ -8,9 +9,9 @@ const BackLink = () => {
   const { currentDevice } = useDevice()
 
   return (
-    <div onClick={goBack}>
+    <button onClick={goBack}>
       <MdArrowBack className={css[currentDevice]} />
-    </div>
+    </button>
   )
 }
 export default React.memo(BackLink)

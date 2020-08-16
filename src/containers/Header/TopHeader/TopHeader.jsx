@@ -8,6 +8,7 @@ import DesktopOnly from 'utils/DesktopOnly'
 import Button from 'components/Button/Button'
 import cn from 'classnames'
 import useDevice from 'hooks/useDevice'
+import { PAGE_BASKET } from 'constants/routes'
 
 const TopHeader = ({ clickOpen, price }) => {
   const { currentDevice, isSmall } = useDevice()
@@ -33,7 +34,7 @@ const TopHeader = ({ clickOpen, price }) => {
                 {isSmall ? <MdPhone /> : '8 (800) 535 35 35'}
               </a>
             </DesktopOnly>
-            <Button className={css.btnBasket}>
+            <Button className={css.btnBasket} to={PAGE_BASKET}>
               {price}
             </Button>
           </div>

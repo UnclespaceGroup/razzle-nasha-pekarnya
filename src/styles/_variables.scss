@@ -11,11 +11,22 @@
 
 
 .container-m {
-  width: 29.6rem;
+  width: 29.2rem;
   margin: 0 auto;
 }
 
 
 .minHeight {
   min-height: 100vh;
+}
+
+
+@mixin container {
+  width: 124.8rem;
+  margin: 0 auto;
+}
+
+@mixin container-m {
+  width: 29.2rem;
+  margin: 0 auto;
 }

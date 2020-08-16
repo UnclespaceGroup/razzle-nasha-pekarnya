@@ -12,6 +12,7 @@ const Bg = ({ children, color, className }) => (
 )
 Bg.propTypes = {
   children: PropTypes.node,
+  className: PropTypes.string,
   color: PropTypes.oneOf(['white', 'grey'])
 }
 export default React.memo(Bg)

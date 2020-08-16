@@ -1,0 +1,74 @@
+.container {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2.4rem;
+  border-radius: .2rem;
+}
+
+.isSmall.container {
+  display: block;
+  padding: 1.6rem;
+}
+
+.left {
+  display: flex;
+}
+
+.isSmall .left {
+  display: block;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.isSmall .right {
+  justify-content: space-between;
+  margin-top: 2.4rem;
+}
+
+.img {
+  width: 18rem;
+  height: 100%;
+  background-size: contain;
+  margin-right: 2.4rem;
+}
+
+.isSmall .img {
+  height: 10rem;
+  width: auto;
+  margin-right: 0;
+  margin-bottom: 1.6rem;
+}
+
+.item {
+  &:nth-child(n + 2) {
+    margin-top: 1.6rem;
+  }
+}
+
+.title {
+  color: #4F4F4F;
+  font-size: 1.2rem;
+}
+
+.value {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.remove {
+  width: 3.2rem;
+  height: 3.2rem;
+  color: #4F4F4F;
+  margin-left: 4rem;
+}
+
+.isSmall .remove {
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-left: 0;
+}

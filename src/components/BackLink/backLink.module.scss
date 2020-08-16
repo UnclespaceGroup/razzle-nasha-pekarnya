@@ -1,0 +1,14 @@
+.isLarge {
+  width: 4.8rem;
+  height: 4.8rem;
+  transition: all 200ms ease-in;
+
+  &:hover {
+    color: orange;
+  }
+}
+
+.isSmall {
+  width: 3.2rem;
+  height: 3.2rem;
+}
