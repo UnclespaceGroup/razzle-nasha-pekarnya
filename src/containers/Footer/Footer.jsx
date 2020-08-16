@@ -3,10 +3,12 @@ import React from 'react'
 import BgImage from 'components/BgImage/BgImage'
 import css from './footer.module.scss'
 import Container from 'components/Container/Container'
+import useDevice from 'hooks/useDevice'
 
 const Footer = () => {
+  const { currentDevice } = useDevice()
   return (
-    <footer>
+    <footer className={css[currentDevice]}>
       <BgImage local img='/api/footer-image.jpg'>
         <div className={css.wrapper}>
           <Container>

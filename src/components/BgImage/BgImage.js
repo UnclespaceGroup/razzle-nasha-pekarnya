@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 import css from './BgImage.module.scss'
-import getImgName from 'components/utils/getImgName'
+import getImgName from 'utils/getImgName'
 
 const BgImage = ({ img, className, children, local }) => {
   const imgUrl = useMemo(() => local ? img : getImgName(img), [img, local])

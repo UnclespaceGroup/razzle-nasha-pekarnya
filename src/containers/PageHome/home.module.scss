@@ -1,19 +1,27 @@
 @import "styles/_variables";
 
-.isLarge {
+.wrapper {
   background: #E5E5E5;
   min-height: 100vh;
-
-  .products {
-    margin: 12rem auto 3.2rem;
-  }
-
-  .moreBtn {
-    text-align: center;
-  }
-
-  .banner {
-    margin: 6.4rem 0;
-  }
+  padding-bottom: 12rem;
 }
 
+.isSmall.wrapper {
+
+}
+
+.products {
+  margin: 12rem auto 3.2rem;
+}
+
+.isSmall .products {
+  margin: 6rem auto 2rem;
+}
+
+.moreBtn {
+  text-align: center;
+}
+
+.banner {
+  margin: 6.4rem 0;
+}

@@ -9,7 +9,7 @@ const Button = ({ className, ...props }) => {
   const { currentDevice } = useDevice()
   return (
     <button
-      className={cn(className, css[currentDevice])}
+      className={cn(className, css.container, css[currentDevice])}
       {...props}
     />
   )

@@ -1,7 +1,7 @@
-.isLarge {
+.container {
   background-color: #F2994A;
   display: inline-flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 5.6rem;
   font-size: 1.8rem;
@@ -17,4 +17,9 @@
   &:hover {
     background-color: #e37e21;
   }
+}
+
+.isSmall {
+  width: 100%;
+  justify-content: center;
 }

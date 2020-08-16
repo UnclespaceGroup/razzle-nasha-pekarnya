@@ -5,46 +5,78 @@
   flex-direction: column;
   justify-content: center;
   background-color: #7D5A3A;
+}
 
-  .wrapper {
-    width: 64rem;
-  }
+.isSmall {
+  background-color: #7D5A3A;
+  position: relative;
+  height: auto;
+  padding: 4.8rem 0;
+}
 
-  .title {
-    font-size: 4.8rem;
-    font-weight: 500;
-    margin-bottom: 2.4rem;
-    color: white;
-  }
+.wrapper {
+  width: 64rem;
+}
 
-  .text {
-    font-size: 2.4rem;
-    color: white;
-  }
+.isSmall .wrapper {
+  width: 100%;
+  position: relative;
+  z-index: 12;
+}
 
-  .side {
+.title {
+  font-size: 4.8rem;
+  font-weight: 500;
+  margin-bottom: 2.4rem;
+  color: white;
+}
+
+.isSmall .title {
+  font-size: 2.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.text {
+  font-size: 2.4rem;
+  color: white;
+}
+
+.isSmall .text {
+  font-size: 1.6rem;
+}
+
+.side {
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+}
+
+.isSmall .side {
+  width: 100%;
+}
+
+.img {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  &:before {
+    content: '';
     position: absolute;
-    z-index: 10;
-    right: 0;
     top: 0;
+    right: 0;
     bottom: 0;
-    width: 50%;
-  }
-
-  .img {
-    position: relative;
+    left: 0;
     height: 100%;
-    width: 100%;
+    background: rgba(125, 90, 58, 0.6);
+  }
+}
 
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      height: 100%;
-      background: rgba(125, 90, 58, 0.6);
-    }
+.isSmall .img {
+  &:before {
+    background: rgba(125, 90, 58, 0.9);
   }
 }

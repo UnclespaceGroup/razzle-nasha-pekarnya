@@ -1,50 +1,69 @@
-.isLarge {
+.container {
   background-color: white;
   padding: 2px;
   border-radius: 1.6rem;
   overflow: hidden;
   cursor: pointer;
+}
 
-  .img {
-    position: relative;
-    height: 24rem;
-    overflow: hidden;
-    border-radius: 1.6rem 1.6rem 0 0;
+.img {
+  position: relative;
+  height: 24rem;
+  overflow: hidden;
+  border-radius: 1.6rem 1.6rem 0 0;
 
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 200ms ease-in;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  &:hover {
     &:before {
-      content: '';
-      position: absolute;
-      z-index: 10;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      transition: all 200ms ease-in;
-      background-color: rgba(0,0,0,0);
-    }
-    &:hover {
-      &:before {
-        background-color: rgba(242, 153, 74, .2);
-      }
+      background-color: rgba(242, 153, 74, .2);
     }
   }
+}
 
-  .title {
-    font-size: 2.4rem;
-    font-weight: 500;
-  }
+.isSmall .img {
+  height: 20rem;
+}
 
-  .price {
-    font-size: 2.4rem;
-    font-weight: bold;
-    color: #4F4F4F;
-  }
+.title {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
 
-  .wrapper {
-    height: 14rem;
-    padding: 2.4rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+.isSmall .title {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.price {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #4F4F4F;
+}
+
+.isSmall .price {
+  font-size: 1.8rem;
+}
+
+.wrapper {
+  height: 14rem;
+  padding: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.isSmall .wrapper {
+  height: auto;
+  padding: 1.6rem;
 }

@@ -11,7 +11,7 @@ const Banner = ({ className }) => {
   const { currentDevice } = useDevice()
 
   return (
-    <div className={cn(css[currentDevice], className)}>
+    <div className={cn(css[currentDevice], css.container, className)}>
       <Container>
         <div className={css.wrapper}>
           <h2 className={css.title}>Доставка бесплатно</h2>

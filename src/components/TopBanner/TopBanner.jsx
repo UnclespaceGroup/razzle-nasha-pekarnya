@@ -2,6 +2,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import useDevice from 'hooks/useDevice'
+import cn from 'classnames'
 import css from './topBanner.module.scss'
 import Container from 'components/Container/Container'
 import BgImage from 'components/BgImage/BgImage'
@@ -12,7 +13,7 @@ const TopBanner = ({ className }) => {
   const { currentDevice } = useDevice()
 
   return (
-    <div className={css[currentDevice]}>
+    <div className={cn(css[currentDevice], css.container)}>
       <Container>
         <div className={css.wrapper}>
           <div>
