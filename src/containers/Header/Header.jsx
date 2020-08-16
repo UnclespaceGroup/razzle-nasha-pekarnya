@@ -12,24 +12,26 @@ const Header = ({ className }) => {
   const { currentDevice, isSmall } = useDevice()
 
   return (
-    <div className={cn(css[currentDevice], css.container)}>
-      <Container className={css.wrapper}>
-        <div className={css.left}>
-          <MdMenu className={css.burger} />
-          <DesktopOnly>
-            <div className={css.text}>
+    <div className={cn(css.back, css[currentDevice])}>
+      <div className={css.container}>
+        <Container className={css.wrapper}>
+          <div className={css.left}>
+            <MdMenu className={css.burger} />
+            <DesktopOnly>
+              <div className={css.text}>
               Доставка в Сыктывкаре<br />до 50 минут
-            </div>
-          </DesktopOnly>
-        </div>
-        <img className={css.logo} src='/images/logo-brown.svg' alt='' />
-        <div className={css.right}>
-          <a href='tel:8 (800) 535 35 35' className={css.phone}>
-            {isSmall ? <MdPhone /> : '8 (800) 535 35 35'}
-          </a>
-        </div>
-      </Container>
-      <div className={css.bootom} />
+              </div>
+            </DesktopOnly>
+          </div>
+          <img className={css.logo} src='/images/logo-brown.svg' alt='' />
+          <div className={css.right}>
+            <a href='tel:8 (800) 535 35 35' className={css.phone}>
+              {isSmall ? <MdPhone /> : '8 (800) 535 35 35'}
+            </a>
+          </div>
+        </Container>
+        <div className={css.bootom} />
+      </div>
     </div>
   )
 }
