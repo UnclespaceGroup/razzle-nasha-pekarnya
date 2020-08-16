@@ -1,0 +1,23 @@
+.block {
+  width: 102.8rem;
+  margin-left: auto;
+  margin-top: 2.4rem;
+  margin-bottom: 6rem;
+}
+
+.title {
+  text-align: right;
+  margin-top: 1.6rem;
+}
+
+.isSmall {
+  .block {
+    margin-top: 2.4rem;
+    margin-bottom: 6rem;
+  }
+
+  .title {
+    text-align: right;
+    font-size: 1.4rem;
+  }
+}
