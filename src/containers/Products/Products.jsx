@@ -1,15 +1,14 @@
 // packages
 import React from 'react'
-import _ from 'lodash'
 import PropTypes from 'prop-types'
+import Container from 'components/Container/Container'
 import { useRemoteData } from '@aic/react-remote-data-provider'
 import FETCH_PRODUCTS from 'api/fetch/FETCH_PRODUCTS'
 import CardProduct from 'components/CardProduct/CardProduct'
 import RowCards from 'components/RowCards/RowCards'
-import Container from 'components/Container/Container'
 import Title from 'components/Title/Title'
 
-const ContainerProducts = ({ className, title }) => {
+const Products = ({ className, title }) => {
   const { response: products } = useRemoteData(FETCH_PRODUCTS, [])
 
   return (
@@ -21,7 +20,7 @@ const ContainerProducts = ({ className, title }) => {
     </Container>
   )
 }
-ContainerProducts.propTypes = {
+Products.propTypes = {
   className: PropTypes.string
 }
-export default React.memo(ContainerProducts)
+export default React.memo(Products)

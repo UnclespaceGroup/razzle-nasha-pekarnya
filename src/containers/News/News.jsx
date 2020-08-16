@@ -8,7 +8,7 @@ import Title from 'components/Title/Title'
 import FETCH_NEWS from 'api/fetch/FETCH_NEWS'
 import CardNews from 'components/CardNews/CardNews'
 
-const ContainerNews = ({ className, title }) => {
+const News = ({ className, title }) => {
   const { response: items } = useRemoteData(FETCH_NEWS, [])
 
   return (
@@ -20,7 +20,7 @@ const ContainerNews = ({ className, title }) => {
     </Container>
   )
 }
-ContainerNews.propTypes = {
+News.propTypes = {
   className: PropTypes.string
 }
-export default React.memo(ContainerNews)
+export default React.memo(News)

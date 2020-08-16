@@ -1,14 +1,14 @@
 import React from 'react'
-import css from 'containers/PageHome/home.module.scss'
 import useDevice from 'hooks/useDevice'
 import cn from 'classnames'
 import Header from 'containers/Header/Header'
 import TopBanner from 'components/TopBanner/TopBanner'
-import ContainerProducts from 'containers/ContainerProducts/ContainerProducts'
+import Products from 'containers/Products/Products'
 import Button from 'components/Button/Button'
 import Container from 'components/Container/Container'
 import Banner from 'components/Banner/Banner'
-import ContainerNews from 'containers/ContainerNews/ContainerNews'
+import ContainerNews from 'containers/News/News'
+import css from 'containers/PageHome/home.module.scss'
 
 function Home () {
   const { currentDevice } = useDevice()
@@ -17,7 +17,7 @@ function Home () {
     <div className={cn(css[currentDevice], css.wrapper)}>
       <Header />
       <TopBanner />
-      <ContainerProducts
+      <Products
         title='Популярные заказы'
         className={css.products}
       />
