@@ -1,0 +1,105 @@
+@import "styles/_variables";
+
+.container {
+  width: 108rem;
+  margin-bottom: 6.4rem;
+  padding-top: 2.4rem;
+}
+
+.isSmall .container {
+  @include container-m;
+  padding-bottom: 6.4rem;
+}
+
+$fieldWidth: 33.33%;
+$bigFieldWidth: 66.66%;
+
+.title {
+  font-size: 4.8rem;
+  margin-top: 2.4rem;
+  margin-bottom: 4.8rem;
+}
+
+.isSmall .title {
+  font-size: 3.2rem;
+  margin-bottom: 3.2rem;
+}
+
+.fieldName {
+  margin-bottom: 4.8rem;
+  width: $bigFieldWidth;
+}
+
+.isSmall .fieldName {
+  width: 100%;
+}
+
+.subtitle {
+  margin-bottom: 3rem;
+  font-size: 2.4rem;
+}
+
+.rowFields {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -.8rem;
+}
+
+.isSmall .rowFields {
+  margin: 0;
+  display: block;
+}
+
+.bigField {
+  width: $bigFieldWidth;
+  padding: 0 .8rem 3.2rem;
+}
+
+.field {
+  width: $fieldWidth;
+  padding: 0 .8rem 3.2rem;
+}
+
+.isSmall {
+  .field, .bigField {
+    width: 100%;
+    padding: 0 0 2.4rem;
+  }
+}
+
+
+.textArea {
+  margin-top: 2.4rem;
+  margin-bottom: 4rem;
+}
+
+.plus {
+  font-size: 4.8rem;
+}
+
+.price {
+  color: #828282;
+  font-size: 3.6rem;
+  margin-left: 4.2rem;
+  font-weight: bold;
+}
+
+.isSmall .price {
+  margin-bottom: 2.4rem;
+}
+
+.footer {
+  margin-top: 6.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.isSmall .footer {
+  align-items: flex-end;
+  flex-direction: column-reverse;
+}
+
+.error {
+  color: red;
+  margin-top: 2rem;
+}

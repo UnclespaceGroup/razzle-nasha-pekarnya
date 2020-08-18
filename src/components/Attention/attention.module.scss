@@ -1,0 +1,29 @@
+.container {
+  height: 4.8rem;
+  width: 64rem;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2.4rem;
+  margin: 2rem 0;
+  border-radius: .4rem;
+}
+
+.isSmall.container {
+  width: 100% !important;
+  height: auto;
+  padding: 1.2rem;
+  font-size: 1.4rem;
+}
+
+.danger {
+  color: #EB5757 !important;
+  background-color: #F8D7DA !important;
+  box-shadow: 0 0 0 .1rem #F5C6CB;
+}
+
+.success {
+  color: #155724 !important;
+  background-color: #d4edda !important;
+  box-shadow: 0 0 0 .1rem #c3e6cb;
+}

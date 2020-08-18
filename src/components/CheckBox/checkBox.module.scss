@@ -1,0 +1,44 @@
+.container {
+  position: relative;
+
+  input {
+    display: none;
+
+    &:checked +.label:before {
+      background: gray url("./assets/checkbox.svg") no-repeat center;
+      background-size: contain;
+    }
+  }
+}
+
+.hasError {
+  .label:before {
+    box-shadow: 0 0 .1rem .2rem red;
+  }
+}
+
+.label {
+  padding-left: 5rem;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    width: 2.4rem;
+    height: 2.4rem;
+    position: absolute;
+    left: 0;
+    border: solid 1px darkgray;
+    border-radius: .4rem;
+  }
+}
+
+.prompt {
+  color: grey;
+  font-size: 1.2rem;
+  margin-top: .4rem;
+  margin-left: 5rem;
+}
+
+.error {
+  color: red;
+}
