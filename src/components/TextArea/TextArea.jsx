@@ -3,8 +3,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import css from './textarea.module.scss'
 import useDevice from 'hooks/useDevice'
+import Label from 'components/Label/Label'
 
-const TextArea = ({ label, input, prompt, className, meta }) => {
+const TextArea = ({ label, input, prompt, className, meta, ...props }) => {
   const { active, error, touched } = meta
   const { value } = input
   const { currentDevice } = useDevice()
@@ -13,17 +14,20 @@ const TextArea = ({ label, input, prompt, className, meta }) => {
     <div
       className={cn(
         css.container,
-        (active || value) && css.hasValue,
-        active && css.active,
         css[currentDevice],
         className
       )}
     >
-      <label className={css.label}>{label}</label>
+      <Label>{label}</Label>
       <textarea
-        className={css.input}
+        className={cn(
+          css.input,
+          (active || value) && css.hasValue,
+          active && css.active
+        )}
         rows={4}
         {...input}
+        {...props}
       />
       <div className={css.prompt}>
         {(error && touched) ? <span className={css.error}>{error}</span> : prompt}

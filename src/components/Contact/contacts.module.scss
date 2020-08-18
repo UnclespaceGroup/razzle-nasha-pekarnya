@@ -1,0 +1,20 @@
+.contact {
+  display: block;
+
+  &:nth-child(n + 2) {
+    margin-top: 2.4rem;
+
+  }
+}
+
+.title {
+  color: #4F4F4F;
+  font-size: 1.2rem;
+}
+
+.value {
+  font-size: 1.8rem;
+  &:nth-child(n + 3) {
+    margin-top: .4rem;
+  }
+}

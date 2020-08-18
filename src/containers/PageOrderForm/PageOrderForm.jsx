@@ -28,11 +28,12 @@ const PageOrderForm = () => {
           <Container className={css.container}>
             <BackLink />
             <div className={css.title}>Сделай заказ прямо сейчас</div>
-            <Field
-              component={Input}
-              className={css.fieldName}
-              {...formData.name}
-            />
+            <div className={css.fieldName}>
+              <Field
+                component={Input}
+                {...formData.name}
+              />
+            </div>
             <div className={css.subtitle}>Адрес доставки</div>
             <ul className={css.rowFields}>
               <li className={css.bigField}>

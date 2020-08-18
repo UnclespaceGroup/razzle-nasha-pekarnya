@@ -32,10 +32,16 @@ const ContactsBlock = ({ className }) => {
   return (
     <div className={cn(css.flex, css[currentDevice], className)}>
       {
-        contacts.map((item, key) => (
+        contacts.map(({ title, value }, key) => (
           <div className={css.contact} key={key}>
-            <div className={css.title}>{item.title}</div>
-            <div className={css.value}>{item.value}</div>
+            <div className={css.title}>{title}</div>
+            {
+              Array.isArray(value)
+                ? value.map((item, k) => (
+                  <div className={css.value} key={k}>{item}</div>
+                ))
+                : <div className={css.value}>{value}</div>
+            }
           </div>
         ))
       }

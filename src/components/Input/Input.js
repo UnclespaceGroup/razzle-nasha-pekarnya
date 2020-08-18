@@ -1,13 +1,12 @@
 import React from 'react'
 import cn from 'classnames'
-import { MdClose } from 'react-icons/md'
 import PropTypes from 'prop-types'
 import useDevice from 'hooks/useDevice'
 import css from './Input.module.scss'
+import Label from 'components/Label/Label'
 
-const Input = ({ label, input, prompt, className, meta, type }) => {
+const Input = ({ label, input, prompt, className, meta, type, ...props }) => {
   const { active, error, touched } = meta
-  const { value, onChange } = input
   const { currentDevice } = useDevice()
 
   return (
@@ -15,23 +14,25 @@ const Input = ({ label, input, prompt, className, meta, type }) => {
       className={cn(
         css.container,
         css[currentDevice],
-        className)}
+        className
+      )}
     >
       <div
         className={cn(
-          css.wrapper,
-          (active || value) && css.hasValue,
-          active && css.active,
-          (error && touched) && css.hasError
+          css.wrapper
         )}
       >
-        <label className={css.label}>{label}</label>
+        <Label>{label}</Label>
         <input
-          className={css.input}
+          className={cn(
+            css.input,
+            active && css.active,
+            (error && touched) && css.hasError
+          )}
           {...input}
+          {...props}
           type={type}
         />
-        {value && <MdClose className={css.clear} onClick={() => onChange(undefined)} />}
       </div>
       <div className={css.prompt}>
         {(error && touched) ? <span className={css.error}>{error}</span> : prompt}

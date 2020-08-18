@@ -6,13 +6,17 @@ import useDevice from 'hooks/useDevice'
 import css from './button.module.scss'
 import { Link } from 'react-router-dom'
 
-const Button = ({ className, to, ...props }) => {
+const Button = ({ className, to, variant, ...props }) => {
   const { currentDevice } = useDevice()
   const Tag = to ? Link : 'button'
 
   return (
     <Tag
-      className={cn(className, css.container, css[currentDevice])}
+      className={cn(className,
+        css.container,
+        css[currentDevice],
+        css[variant]
+      )}
       to={to}
       {...props}
     />

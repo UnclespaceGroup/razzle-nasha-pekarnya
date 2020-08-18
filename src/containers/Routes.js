@@ -6,7 +6,7 @@ import {
   PAGE_BASKET,
   PAGE_HOME,
   PAGE_NEWS,
-  PAGE_NEWS_DETAIL, PAGE_ORDER,
+  PAGE_NEWS_DETAIL, PAGE_ORDER, PAGE_ORDER_RESULT,
   PAGE_PRODUCTS,
   PAGE_PRODUCTS_DETAIL
 } from 'constants/routes'
@@ -17,6 +17,7 @@ import PageBasket from 'containers/PageBasket/PageBasket'
 import PageNewsDetail from 'containers/PageNewsDetail/PageNewsDetail'
 import PageProductsDetail from 'containers/PageProductsDetail/PageProductsDetail'
 import PageOrderForm from 'containers/PageOrderForm/PageOrderForm'
+import PageOrderResult from 'containers/PageOrderResult/PageOrderResult'
 
 const Routes = () => (
   <Switch>
@@ -28,6 +29,7 @@ const Routes = () => (
     <Route exact path={PAGE_ABOUT} component={PageAbout} />
     <Route exact path={PAGE_BASKET} component={PageBasket} />
     <Route exact path={PAGE_ORDER} component={PageOrderForm} />
+    <Route exact path={PAGE_ORDER_RESULT} component={PageOrderResult} />
   </Switch>
 )
 

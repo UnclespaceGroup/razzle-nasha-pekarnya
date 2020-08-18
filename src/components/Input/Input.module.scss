@@ -11,18 +11,6 @@
   color: red!important;
 }
 
-.hasValue {
-  .label {
-    transform: translateY(-1.8rem) scale(.6, .6);
-  }
-}
-
-.isSmall.hasValue {
-  .label {
-    transform: translateY(-1.6rem) scale(.6, .6);
-  }
-}
-
 .active {
   box-shadow: 0 0 1px 1px gray;
 }
@@ -31,43 +19,13 @@
   box-shadow: 0 0 1px 1px red;
 }
 
-.clear {
-  position: absolute;
-  cursor: pointer;
-  right: 2.4rem;
-  width: 3.2rem;
-  height: 3.2rem;
-  top: calc(50% - 1.6rem)
-}
-
-.isSmall .clear {
-  right: .8rem;
-  width: 2.4rem;
-}
-
-.label {
-  pointer-events: none;
-  position: absolute;
-  top: calc(50% - 1.2rem);
-  font-size: 2.4rem;
-  left: 2.4rem;
-  transform-origin: left;
-  transition: all 200ms ease-in;
-  opacity: .8;
-}
-
-.isSmall .label {
-  left: 1.2rem;
-  font-size: 2rem;
-}
-
 .wrapper {
   position: relative;
 }
 
 .input {
   height: 6.4rem;
-  padding: 2.4rem 2.4rem 0;
+  padding: 0 2.4rem;
   font-size: 2.4rem;
   width: 100%;
   background-color: #F2F2F2;
@@ -75,7 +33,7 @@
 }
 
 .isSmall .input {
-  padding: 1.4rem 1.2rem 0;
+  padding: 0 1.2rem;
   height: 5.4rem;
   font-size: 2rem;
 }
