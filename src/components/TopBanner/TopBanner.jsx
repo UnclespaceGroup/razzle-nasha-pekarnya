@@ -8,6 +8,7 @@ import Container from 'components/Container/Container'
 import BgImage from 'components/BgImage/BgImage'
 import Button from 'components/Button/Button'
 import { MdArrowForward } from 'react-icons/md'
+import { scrollWindowTo } from 'utils/scrollWindowTo'
 
 const TopBanner = ({ className }) => {
   const { currentDevice } = useDevice()
@@ -23,7 +24,7 @@ const TopBanner = ({ className }) => {
             </div>
           </div>
           <div>
-            <Button>
+            <Button onClick={() => scrollWindowTo('bannerBottom')}>
             Подробнее
               <MdArrowForward />
             </Button>
@@ -31,6 +32,7 @@ const TopBanner = ({ className }) => {
         </div>
       </Container>
       <BgImage img='/api/image-home-banner.jpg' local className={css.img} />
+      <span id='bannerBottom' />
     </div>
   )
 }
