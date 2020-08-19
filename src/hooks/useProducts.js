@@ -51,7 +51,7 @@ const useProducts = () => {
   React.useEffect(() => {
     const _cards = _.map(items, card => ({
       ...card,
-      discountPrice: getDiscountPrice(card.price, card.discount),
+      discountPrice: getDiscountPrice(card.price, card.discount), // Цена с учётом скидки
       count: 0
     }))
     setCards(_cards)
