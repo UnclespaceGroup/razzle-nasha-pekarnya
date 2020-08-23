@@ -6,8 +6,8 @@ import { getDiscountPrice } from 'utils/priceUtils'
 import { useRemoteData } from '@aic/react-remote-data-provider'
 import FETCH_PRODUCTS from 'api/fetch/FETCH_PRODUCTS'
 
-const useProducts = () => {
-  const { response: items } = useRemoteData(FETCH_PRODUCTS, [])
+const useProducts = ({ limit } = {}) => {
+  const { response: items } = useRemoteData(FETCH_PRODUCTS({ limit }), [])
   const [cards, setCards] = React.useState([])
 
   const dispatch = useDispatch()

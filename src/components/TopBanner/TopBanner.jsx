@@ -1,6 +1,5 @@
 // packages
 import React from 'react'
-import PropTypes from 'prop-types'
 import useDevice from 'hooks/useDevice'
 import cn from 'classnames'
 import css from './topBanner.module.scss'
@@ -10,7 +9,7 @@ import Button from 'components/Button/Button'
 import { MdArrowForward } from 'react-icons/md'
 import { scrollWindowTo } from 'utils/scrollWindowTo'
 
-const TopBanner = ({ className }) => {
+const TopBanner = () => {
   const { currentDevice } = useDevice()
 
   return (
@@ -35,8 +34,5 @@ const TopBanner = ({ className }) => {
       <span id='bannerBottom' />
     </div>
   )
-}
-TopBanner.propTypes = {
-  className: PropTypes.string
 }
 export default React.memo(TopBanner)

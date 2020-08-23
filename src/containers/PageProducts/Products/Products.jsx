@@ -1,26 +1,22 @@
 // packages
 import React from 'react'
-import PropTypes from 'prop-types'
 import Container from 'components/Container/Container'
 import CardProduct from 'components/CardProduct/CardProduct'
 import RowCards from 'components/RowCards/RowCards'
-import Title from 'components/Title/Title'
 import useProducts from 'hooks/useProducts'
+import css from './products.module.scss'
+import useDevice from 'hooks/useDevice'
 
-const Products = ({ className, title, limit }) => {
-  const { cards } = useProducts({ limit })
+const Products = () => {
+  const { cards } = useProducts()
+  const { currentDevice } = useDevice()
 
   return (
-    <Container className={className}>
-      <Title>{title}</Title>
+    <Container className={css[currentDevice]}>
       <RowCards items={cards}>
         <CardProduct />
       </RowCards>
     </Container>
   )
-}
-Products.propTypes = {
-  className: PropTypes.string,
-  limit: PropTypes.number
 }
 export default React.memo(Products)

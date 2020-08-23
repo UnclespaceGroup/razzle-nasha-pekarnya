@@ -1,24 +1,19 @@
 import { axiosInstance } from 'api/axios/instance'
 import _ from 'lodash'
-import { PAGE_PRODUCTS } from 'constants/routes'
 
-const FETCH_PRODUCTS = ({ limit }) => ({
+const FETCH_CATEGORIES = {
   axiosInstance,
   request: {
-    url: '/products',
-    params: {
-      _limit: limit
-    }
+    url: '/categories'
   },
   requestFunctions: {
     transformResponse: data => {
       const parsedData = JSON.parse(data)
 
       return _.map(parsedData, item => ({
-        ...item,
-        to: PAGE_PRODUCTS + item.id
+        ...item
       }))
     }
   }
-})
-export default FETCH_PRODUCTS
+}
+export default FETCH_CATEGORIES

@@ -10,6 +10,7 @@ import Banner from 'components/Banner/Banner'
 import ContainerNews from 'containers/News/News'
 import Bg from 'components/Bg/Bg'
 import css from 'containers/PageHome/home.module.scss'
+import { PAGE_PRODUCTS } from 'constants/routes'
 
 function Home () {
   const { currentDevice } = useDevice()
@@ -19,11 +20,12 @@ function Home () {
       <Header />
       <TopBanner />
       <Products
+        limit={6}
         title='Популярные заказы'
         className={css.products}
       />
       <Container className={css.moreBtn}>
-        <Button>Показать все</Button>
+        <Button to={PAGE_PRODUCTS}>Показать все</Button>
       </Container>
       <Banner className={css.banner} />
       <ContainerNews title='Последние новости' />

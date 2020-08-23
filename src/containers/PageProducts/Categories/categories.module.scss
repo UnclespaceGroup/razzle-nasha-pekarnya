@@ -1,0 +1,26 @@
+@import "styles/_variables";
+
+.isLarge {
+  margin: 10rem auto;
+}
+
+.isSmall {
+  margin: 4rem auto;
+}
+
+.isSmall .row {
+  overflow: auto;
+  white-space: nowrap;
+  @include -container-m;
+  padding-left: .4rem;
+
+  & * {
+    white-space: normal;
+  }
+
+  li {
+    display: inline-block;
+    width: 70%;
+    padding: 0 1rem;
+  }
+}
