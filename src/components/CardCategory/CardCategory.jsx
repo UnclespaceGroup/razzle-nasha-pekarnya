@@ -5,11 +5,11 @@ import BgImage from 'components/BgImage/BgImage'
 import css from './cardCategory.module.scss'
 import useDevice from 'hooks/useDevice'
 
-const CardCategory = ({ className, title, img }) => {
+const CardCategory = ({ className, title, img, ...otherProps }) => {
   const { currentDevice } = useDevice()
 
   return (
-    <BgImage img={img} className={css[currentDevice]}>
+    <BgImage img={img} className={css[currentDevice]} {...otherProps}>
       <div className={css.wrapper}>
         <div className={css.title}>
           {title}

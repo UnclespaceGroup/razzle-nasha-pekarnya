@@ -10,6 +10,12 @@
   flex-direction: column;
   justify-content: center;
   height: 15.6rem;
+  transition: all 200ms ease-in;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
 }
 
 .isSmall .wrapper {

@@ -10,9 +10,7 @@ const FETCH_CATEGORIES = {
     transformResponse: data => {
       const parsedData = JSON.parse(data)
 
-      return _.map(parsedData, item => ({
-        ...item
-      }))
+      return _.filter(parsedData, ({ products }) => _.size(products))
     }
   }
 }
