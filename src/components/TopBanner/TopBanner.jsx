@@ -8,6 +8,7 @@ import BgImage from 'components/BgImage/BgImage'
 import Button from 'components/Button/Button'
 import { MdArrowForward } from 'react-icons/md'
 import { scrollWindowTo } from 'utils/scrollWindowTo'
+import { PAGE_PRODUCTS } from 'constants/routes'
 
 const TopBanner = () => {
   const { currentDevice } = useDevice()
@@ -23,8 +24,8 @@ const TopBanner = () => {
             </div>
           </div>
           <div>
-            <Button onClick={() => scrollWindowTo('bannerBottom')}>
-            Подробнее
+            <Button to={PAGE_PRODUCTS}>
+              Каталог товаров
               <MdArrowForward />
             </Button>
           </div>

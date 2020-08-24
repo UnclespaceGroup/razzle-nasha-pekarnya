@@ -1,14 +1,14 @@
 import { isBrowser } from 'utils'
 const PURCHASES = 'PURCHASES'
 
-const initialState = isBrowser ? JSON.parse(localStorage.getItem(PURCHASES)) : {}
+const initialState = isBrowser ? JSON.parse(sessionStorage.getItem(PURCHASES)) : {}
 
 export default function BasketReducer (state = initialState, action) {
   switch (action.type) {
     case 'ADD_PURCHASE': {
       const _state = Object.assign({}, state)
       _state[action.payload.id] = action.payload
-      localStorage.setItem(PURCHASES, JSON.stringify(_state))
+      sessionStorage.setItem(PURCHASES, JSON.stringify(_state))
       return _state
     }
 
@@ -25,7 +25,7 @@ export default function BasketReducer (state = initialState, action) {
           count: 1
         }
       }
-      localStorage.setItem(PURCHASES, JSON.stringify(_state))
+      sessionStorage.setItem(PURCHASES, JSON.stringify(_state))
       return _state
     }
 
@@ -33,7 +33,7 @@ export default function BasketReducer (state = initialState, action) {
       const _state = Object.assign({}, state)
       delete _state[action.payload]
       console.log(_state)
-      localStorage.setItem(PURCHASES, JSON.stringify(_state))
+      sessionStorage.setItem(PURCHASES, JSON.stringify(_state))
       return _state
     }
 

@@ -8,7 +8,8 @@ import DesktopOnly from 'utils/DesktopOnly'
 import Button from 'components/Button/Button'
 import cn from 'classnames'
 import useDevice from 'hooks/useDevice'
-import { PAGE_BASKET } from 'constants/routes'
+import { PAGE_BASKET, PAGE_HOME } from 'constants/routes'
+import { Link } from 'react-router-dom'
 
 const TopHeader = ({ clickOpen, price }) => {
   const { currentDevice, isSmall } = useDevice()
@@ -27,7 +28,9 @@ const TopHeader = ({ clickOpen, price }) => {
               </div>
             </DesktopOnly>
           </div>
-          <img className={css.logo} src='/images/logo-brown.svg' alt='' />
+          <Link to={PAGE_HOME}>
+            <img className={css.logo} src='/images/logo-brown.svg' alt='' />
+          </Link>
           <div className={css.right}>
             <DesktopOnly>
               <a href='tel:8 (800) 535 35 35' className={css.phone}>

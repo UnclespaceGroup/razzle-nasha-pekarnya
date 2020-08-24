@@ -2,10 +2,13 @@ import { axiosInstance } from 'api/axios/instance'
 import _ from 'lodash'
 import { PAGE_NEWS } from 'constants/routes'
 
-const FETCH_NEWS = {
+const FETCH_NEWS = ({ limit } = {}) => ({
   axiosInstance,
   request: {
-    url: '/actions'
+    url: '/actions',
+    params: {
+      _limit: limit
+    }
   },
   requestFunctions: {
     transformResponse: data => {
@@ -16,5 +19,5 @@ const FETCH_NEWS = {
       }))
     }
   }
-}
+})
 export default FETCH_NEWS

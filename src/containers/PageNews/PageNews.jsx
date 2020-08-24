@@ -5,6 +5,8 @@ import News from 'containers/News/News'
 import useDevice from 'hooks/useDevice'
 import Header from 'containers/Header/Header'
 import Bg from 'components/Bg/Bg'
+import Title from 'components/Title/Title'
+import Container from 'components/Container/Container'
 
 const PageNews = () => {
   const { currentDevice } = useDevice()
@@ -12,6 +14,9 @@ const PageNews = () => {
   return (
     <Bg color='grey' className={css[currentDevice]}>
       <Header />
+      <Container>
+        <Title>Новости и Акции</Title>
+      </Container>
       <News />
     </Bg>
   )
