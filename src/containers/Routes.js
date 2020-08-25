@@ -18,6 +18,7 @@ import PageNewsDetail from 'containers/PageNewsDetail/PageNewsDetail'
 import PageProductsDetail from 'containers/PageProductsDetail/PageProductsDetail'
 import PageOrderForm from 'containers/PageOrderForm/PageOrderForm'
 import PageOrderResult from 'containers/PageOrderResult/PageOrderResult'
+import Page404 from 'containers/Page404/Page404'
 
 const Routes = () => (
   <Switch>
@@ -30,6 +31,7 @@ const Routes = () => (
     <Route exact path={PAGE_BASKET} component={PageBasket} />
     <Route exact path={PAGE_ORDER} component={PageOrderForm} />
     <Route exact path={PAGE_ORDER_RESULT} component={PageOrderResult} />
+    <Route path='*' component={Page404} />
   </Switch>
 )
 

@@ -11,7 +11,12 @@ const FETCH_PRODUCTS_DETAIL = (slug) => ({
   requestFunctions: {
     transformResponse: data => {
       const parsedData = JSON.parse(data)
-      return parsedData?.[0]
+      const currentData = parsedData?.[0]
+
+      return {
+        ...currentData,
+        isNotFound: !currentData
+      }
     }
   }
 })

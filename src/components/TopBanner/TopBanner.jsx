@@ -26,7 +26,9 @@ const TopBanner = () => {
           <div>
             <Button to={PAGE_PRODUCTS}>
               Каталог товаров
-              <MdArrowForward />
+              <span>
+                <MdArrowForward />
+              </span>
             </Button>
           </div>
         </div>

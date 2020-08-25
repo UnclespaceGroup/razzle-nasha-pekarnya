@@ -1,0 +1,25 @@
+.isLarge {
+  min-height: 80vh;
+  padding: 5% 0;
+}
+
+.isSmall {
+  padding: 10% 0;
+  min-height: 80vh;
+}
+
+.code {
+  font-size: 12rem;
+}
+
+.isSmall .code {
+  font-size: 8rem;
+}
+
+.title {
+  font-size: 4rem;
+}
+
+.isSmall .title {
+  font-size: 2rem;
+}

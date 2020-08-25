@@ -2,7 +2,7 @@
 import React, { useCallback, useMemo } from 'react'
 import css from './pageProductsDetail.module.scss'
 import useDevice from 'hooks/useDevice'
-import { useParams } from 'react-router-dom'
+import { Redirect, useParams } from 'react-router-dom'
 import _ from 'lodash'
 import { useRemoteData } from '@aic/react-remote-data-provider'
 import FETCH_PRODUCTS_DETAIL from 'api/fetch/FETCH_PRODUCTS_DETAIL'
@@ -15,6 +15,7 @@ import Picker from 'components/Picker/Picker'
 import { FiPlus } from 'react-icons/fi'
 import ContactsBlock from 'components/ContactsBlock/ContactsBlock'
 import useProducts from 'hooks/useProducts'
+import { PAGE_404 } from 'constants/routes'
 
 const PageProductsDetail = () => {
   const { slug } = useParams()
@@ -23,13 +24,15 @@ const PageProductsDetail = () => {
       title,
       img,
       price,
+      text,
       discount,
       discountText,
-      id
+      id,
+      isNotFound
     } = {}
   } = useRemoteData(FETCH_PRODUCTS_DETAIL(slug))
 
-  const { currentDevice } = useDevice()
+  const { currentDevice, isSmall } = useDevice()
 
   const { addBasket, cards } = useProducts()
 
@@ -37,6 +40,10 @@ const PageProductsDetail = () => {
 
   const btnAddClick = useCallback(() => addBasket(id, 1), [addBasket, id])
   const addToBasket = useCallback((count) => addBasket(id, count), [addBasket, id])
+
+  if (isNotFound) {
+    return <Redirect to={PAGE_404} />
+  }
 
   return (
     <div className={css[currentDevice]}>
@@ -53,32 +60,32 @@ const PageProductsDetail = () => {
         <div className={css.content}>
           <h1 className={css.title}>{title}</h1>
           <div className={css.text}>
-            Не следует, однако забывать, что постоянное информационно-пропагандистское обеспечение нашей деятельности
-            требуют определения и уточнения дальнейших направлений развития. Равным образом постоянное
-            информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения позиций,
-            занимаемых участниками в отношении поставленных задач.
+            {text}
           </div>
           <div className={css.bottom}>
             {discount && (
               <div className={css.discount}>
                 <div className={css.discountBlock}>- {discount}%</div>
-                <div className={css.discountBottom}>* {discountText}</div>
+                {discountText && <div className={css.discountBottom}>* {discountText}</div>}
               </div>)}
-            <div className={css.price}>
-              {price} ₽
+            <div className={css.counterBlock}>
+              <div className={css.price}>
+                {price} ₽
+              </div>
+              {
+                currentCount
+                  ? <Picker onChange={addToBasket} count={currentCount} variant='black' />
+                  : (
+                    <Button
+                      onClick={btnAddClick}
+                      className={css.btnBasket}
+                    >
+                      {!isSmall && <FiPlus />}
+                      <span>В корзину</span>
+                    </Button>
+                  )
+              }
             </div>
-            {
-              currentCount
-                ? <Picker onChange={addToBasket} count={currentCount} variant='black' />
-                : (
-                  <Button
-                    onClick={btnAddClick}
-                  >
-                    <FiPlus />
-                    <span>В корзину</span>
-                  </Button>
-                )
-            }
           </div>
           <ContactsBlock className={css.contacts} />
         </div>

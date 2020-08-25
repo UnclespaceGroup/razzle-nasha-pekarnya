@@ -70,7 +70,7 @@
 }
 
 .isSmall .bottom {
-  display: block;
+  flex-direction: column;
 }
 
 .price {
@@ -81,7 +81,9 @@
 }
 
 .isSmall .price {
-  margin-bottom: 1.6rem;
+  font-size: 3rem;
+  white-space: nowrap;
+  margin: 0 2rem 0 0;
 }
 
 .contacts {
@@ -92,11 +94,19 @@
 
 .isSmall .contacts {
   margin-top: 4rem;
+  border: none;
 }
 
 .discount {
   position: relative;
   margin-right: auto;
+  border-bottom: solid 1px darkgray;
+  padding-bottom: 6rem;
+}
+
+.isSmall .discount {
+  text-align: right;
+  margin-bottom: 2.4rem;
 }
 
 .discountBlock {
@@ -115,4 +125,25 @@
   font-size: 1rem;
   margin-top: .4rem;
   width: 20rem;
+}
+
+.isSmall .discountBottom {
+  position: relative;
+  display: inline-block;
+  width: 40%;
+  margin-left: 1.6rem;
+}
+
+.counterBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.isSmall .counterBlock {
+  width: 100%;
+}
+
+.isSmall .btnBasket {
+  padding: 0 1.2rem;
+  height: 4rem;
 }
