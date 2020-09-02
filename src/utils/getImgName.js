@@ -1,7 +1,10 @@
+import { apiUrl } from 'api/axios/instance'
+
+// Получить путь к картинке с апи, если объект, иначе просто картинку
 export default function getImgName (img) {
   if (!img) return ''
-  const severUrl = process.env.RAZZLE_API_URL
+
   return typeof img === 'object'
-    ? severUrl + img?.url
-    : severUrl + img
+    ? apiUrl + img?.url
+    : apiUrl + img
 }

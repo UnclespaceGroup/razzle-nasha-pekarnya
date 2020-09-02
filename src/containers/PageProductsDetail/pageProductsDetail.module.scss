@@ -22,7 +22,7 @@
 }
 
 .isSmall .slider {
-  margin-top: 2.4rem;
+  margin: 2.4rem -1.4rem 0;
 }
 
 .img {
@@ -42,42 +42,53 @@
 }
 
 .title {
-  font-size: 4.8rem;
+  font-size: 3.6rem;
   font-weight: 500;
-  padding-bottom: 4.2rem;
-  border-bottom: 1px solid #BDBDBD;
-  margin-bottom: 3.2rem;
+  margin-bottom: 2.4rem;
 }
 
 .isSmall .title {
-  margin-top: 4.2rem;
-  font-size: 3.2rem;
+  margin-top: 3.2rem;
+  font-size: 2.4rem;
   padding-bottom: 1.6rem;
+  margin-bottom: 0;
 }
 
 .text {
+  font-size: 1.8rem;
   margin-bottom: 16rem;
 }
 
 .isSmall .text {
+  font-size: 1.4rem;
   margin-bottom: 6rem;
 }
 
 .bottom {
+  border-top: solid 1px #cbcbcb;
   display: flex;
+  padding-top: 3.6rem;
   align-items: flex-end;
   justify-content: flex-end;
 }
 
 .isSmall .bottom {
-  flex-direction: column;
+  padding-top: 1.6rem;
+  flex-direction: column-reverse;
 }
 
 .price {
-  color: #828282;
+  color: #565656;
   font-size: 3.6rem;
   font-weight: bold;
   margin-right: 2.4rem;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+  font-size: .6em;
+  opacity: .7;
+  text-align: right;
 }
 
 .isSmall .price {
@@ -87,26 +98,26 @@
 }
 
 .contacts {
-  margin-top: 7rem;
-  padding-top: 3.2rem;
-  border-top: 1px solid #BDBDBD;
+  margin-top: 12rem;
+  padding: 3.6rem 1.6rem;
+  background-color: #F0F0F0;
+  border-radius: .4rem;
 }
 
 .isSmall .contacts {
-  margin-top: 4rem;
+  margin: 8rem -1.4rem 0;
+  width: calc(100% + 2.8rem);
   border: none;
 }
 
 .discount {
   position: relative;
   margin-right: auto;
-  border-bottom: solid 1px darkgray;
-  padding-bottom: 6rem;
 }
 
 .isSmall .discount {
-  text-align: right;
-  margin-bottom: 2.4rem;
+  width: 100%;
+  margin-top: 4rem;
 }
 
 .discountBlock {
@@ -130,8 +141,6 @@
 .isSmall .discountBottom {
   position: relative;
   display: inline-block;
-  width: 40%;
-  margin-left: 1.6rem;
 }
 
 .counterBlock {

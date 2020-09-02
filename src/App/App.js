@@ -6,7 +6,9 @@ import ScrollToTop from 'utils/ScrollToTop'
 
 const App = () => (
   <ScrollToTop>
-    <Routes />
+    <div style={{ minHeight: '100vh' }}>
+      <Routes />
+    </div>
     <Footer />
   </ScrollToTop>
 )

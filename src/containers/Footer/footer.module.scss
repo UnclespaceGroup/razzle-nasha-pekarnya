@@ -29,14 +29,44 @@
   color: white;
 }
 
+.isSmall .contacts {
+  margin-top: 4.8rem;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  margin-top: 1.2rem;
+
+  svg {
+    margin-right: 1.2rem;
+  }
+}
+
+.isSmall .contact {
+  font-size: 1.6rem;
+}
+
+.phone {
+  composes: contact;
+  font-size: 3.6rem;
+  font-weight: 500;
+}
+
+.isSmall .phone {
+  margin-top: 3.6rem;
+  font-size: 3.2rem;
+}
+
 .nav {
   color: white;
   font-size: 2.4rem;
-  margin-bottom: 2.4rem;
+  margin-top: 2.4rem;
 
   a {
     display: block;
-    margin-bottom: 1.2rem;
+    margin-top: 1.2rem;
   }
 }
 

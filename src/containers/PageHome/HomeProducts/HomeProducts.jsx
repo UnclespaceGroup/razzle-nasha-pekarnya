@@ -7,20 +7,19 @@ import RowCards from 'components/RowCards/RowCards'
 import Title from 'components/Title/Title'
 import useProducts from 'hooks/useProducts'
 
-const Products = ({ className, title, limit }) => {
-  const { cards } = useProducts({ limit })
+const HomeProducts = ({ className, title }) => {
+  const { cards, loaderProps } = useProducts({ limit: 6 })
 
   return (
     <Container className={className}>
       <Title>{title}</Title>
-      <RowCards items={cards}>
+      <RowCards items={cards} loaderProps={loaderProps}>
         <CardProduct />
       </RowCards>
     </Container>
   )
 }
-Products.propTypes = {
-  className: PropTypes.string,
-  limit: PropTypes.number
+HomeProducts.propTypes = {
+  className: PropTypes.string
 }
-export default React.memo(Products)
+export default React.memo(HomeProducts)

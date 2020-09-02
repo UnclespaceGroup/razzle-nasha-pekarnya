@@ -7,10 +7,9 @@ import Container from 'components/Container/Container'
 import BgImage from 'components/BgImage/BgImage'
 import Button from 'components/Button/Button'
 import { MdArrowForward } from 'react-icons/md'
-import { scrollWindowTo } from 'utils/scrollWindowTo'
 import { PAGE_PRODUCTS } from 'constants/routes'
 
-const TopBanner = () => {
+const TopBanner = ({ title, text, img }) => {
   const { currentDevice } = useDevice()
 
   return (
@@ -18,23 +17,20 @@ const TopBanner = () => {
       <Container>
         <div className={css.wrapper}>
           <div>
-            <h1 className={css.title}>Наша пекарня</h1>
+            <h1 className={css.title}>{title}</h1>
             <div className={css.text}>
-              Описание этой невероятно жесткой акции, которая можетт быть на несколко строк
+              {text}
             </div>
           </div>
           <div>
             <Button to={PAGE_PRODUCTS}>
-              Каталог товаров
-              <span>
-                <MdArrowForward />
-              </span>
+              <span>Каталог товаров</span>
+              <MdArrowForward />
             </Button>
           </div>
         </div>
       </Container>
-      <BgImage img='/api/image-home-banner.jpg' local className={css.img} />
-      <span id='bannerBottom' />
+      <BgImage img={img} className={css.img} />
     </div>
   )
 }

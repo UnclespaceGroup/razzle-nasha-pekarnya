@@ -8,6 +8,10 @@
   margin: 4rem auto;
 }
 
+.isLarge .row {
+  margin: 0 -3.6rem!important;
+}
+
 .isSmall .row {
   overflow: auto;
   white-space: nowrap;
@@ -20,7 +24,11 @@
 
   li {
     display: inline-block;
-    width: 70%;
+    width: 60%;
     padding: 0 1rem;
   }
+}
+
+.isLarge .card {
+  padding: 0 3.6rem!important;
 }

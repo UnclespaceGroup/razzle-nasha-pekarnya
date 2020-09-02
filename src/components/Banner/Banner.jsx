@@ -7,19 +7,19 @@ import useDevice from 'hooks/useDevice'
 import Container from 'components/Container/Container'
 import BgImage from 'components/BgImage/BgImage'
 
-const Banner = ({ className }) => {
+const Banner = ({ className, title, text, img }) => {
   const { currentDevice } = useDevice()
 
   return (
     <div className={cn(css[currentDevice], css.container, className)}>
       <Container>
         <div className={css.wrapper}>
-          <h2 className={css.title}>Доставка бесплатно</h2>
-          <div className={css.text}>При заказе от 400 рублей каждый четный четверг самого короткого месяца высокосного года</div>
+          <h2 className={css.title}>{title}</h2>
+          <div className={css.text}>{text}</div>
         </div>
       </Container>
       <div className={css.side}>
-        <BgImage local className={css.img} img='/api/image-home-banner.jpg' />
+        <BgImage className={css.img} img={img} />
       </div>
     </div>
   )

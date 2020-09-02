@@ -24,6 +24,15 @@ const params = {
 
 const SliderPhoto = ({ className, items, slideClassName }) => {
   if (!items) return <div />
+
+  if (items?.length === 1) {
+    return (
+      <BgImage
+        img={items[0]}
+        className={cn(slideClassName, className)}
+      />
+    )
+  }
   return (
     <div className={cn(className, css.container)}>
       <Swiper {...params}>

@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom'
 import Header from 'containers/Header/Header'
 import ContentConstructor from 'components/СontentConstructor/СontentConstructor'
 import BackLink from 'components/BackLink/BackLink'
+import Container from 'components/Container/Container'
 
 const PageNewsDetail = () => {
   const { slug } = useParams()
@@ -18,8 +19,10 @@ const PageNewsDetail = () => {
   return (
     <div style={{ marginTop: '3.2rem' }}>
       <Header />
-      <BackLink />
-      <ContentConstructor items={dimanic} />
+      <Container>
+        <BackLink />
+        <ContentConstructor items={dimanic} />
+      </Container>
     </div>
   )
 }

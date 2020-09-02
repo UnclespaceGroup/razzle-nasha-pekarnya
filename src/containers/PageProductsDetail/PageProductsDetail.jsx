@@ -16,6 +16,7 @@ import { FiPlus } from 'react-icons/fi'
 import ContactsBlock from 'components/ContactsBlock/ContactsBlock'
 import useProducts from 'hooks/useProducts'
 import { PAGE_404 } from 'constants/routes'
+import { getDiscountPrice } from 'utils/priceUtils'
 
 const PageProductsDetail = () => {
   const { slug } = useParams()
@@ -30,7 +31,7 @@ const PageProductsDetail = () => {
       id,
       isNotFound
     } = {}
-  } = useRemoteData(FETCH_PRODUCTS_DETAIL(slug))
+  } = useRemoteData(FETCH_PRODUCTS_DETAIL(slug), [])
 
   const { currentDevice, isSmall } = useDevice()
 
@@ -66,11 +67,12 @@ const PageProductsDetail = () => {
             {discount && (
               <div className={css.discount}>
                 <div className={css.discountBlock}>- {discount}%</div>
-                {discountText && <div className={css.discountBottom}>* {discountText}</div>}
+                <div className={css.discountBottom}>* {discountText || 'Ограниченное предложение'}</div>
               </div>)}
             <div className={css.counterBlock}>
               <div className={css.price}>
-                {price} ₽
+                {discount && <div className={css.oldPrice}>{price} ₽</div>}
+                {getDiscountPrice(price, discount)} ₽
               </div>
               {
                 currentCount

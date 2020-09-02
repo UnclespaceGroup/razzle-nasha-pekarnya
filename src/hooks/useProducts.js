@@ -7,7 +7,10 @@ import { useRemoteData } from '@aic/react-remote-data-provider'
 import FETCH_PRODUCTS from 'api/fetch/FETCH_PRODUCTS'
 
 const useProducts = ({ limit } = {}) => {
-  const { response: items } = useRemoteData(FETCH_PRODUCTS({ limit }), [])
+  const {
+    response: items,
+    ...loaderProps
+  } = useRemoteData(FETCH_PRODUCTS({ limit }), [])
   const [cards, setCards] = React.useState([])
 
   const dispatch = useDispatch()
@@ -75,7 +78,8 @@ const useProducts = ({ limit } = {}) => {
 
   return {
     cards: _cards,
-    addBasket
+    addBasket,
+    loaderProps
   }
 }
 export default useProducts

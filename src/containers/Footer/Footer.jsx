@@ -7,9 +7,20 @@ import Container from 'components/Container/Container'
 import useDevice from 'hooks/useDevice'
 import { items } from 'constants/navigation'
 import { Link } from 'react-router-dom'
+import { useRemoteData } from '@aic/react-remote-data-provider'
+import FETCH_CONTACTS from 'api/fetch/FETCH_CONTACTS'
+import { MdLocationOn, MdMail } from 'react-icons/md'
 
 const Footer = () => {
   const { currentDevice } = useDevice()
+  const {
+    response: {
+      phone,
+      email,
+      address
+    } = {}
+  } = useRemoteData(FETCH_CONTACTS)
+
   return (
     <footer className={css[currentDevice]}>
       <BgImage local img='/api/footer-image.jpg'>
@@ -24,7 +35,11 @@ const Footer = () => {
                   </Link>
                 ))}
               </div>
-              <div className={css.contacts}>выа</div>
+              <div className={css.contacts}>
+                {email && <a href={`mailto:${email}`} className={css.contact}><MdMail />{email}</a>}
+                {address && <div className={css.contact}><MdLocationOn />{address}</div>}
+                {phone && <a href={`tel:${phone}`} className={css.phone}>{phone}</a>}
+              </div>
             </div>
           </Container>
         </div>

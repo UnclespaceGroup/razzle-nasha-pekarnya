@@ -6,7 +6,10 @@ import useDevice from 'hooks/useDevice'
 
 const Picker = ({ className, count = 0, onChange, variant }) => {
   const { currentDevice } = useDevice()
-  const addValue = () => onChange(count + 1)
+  const addValue = e => {
+    e.preventDefault()
+    onChange(count + 1)
+  }
 
   return (
     <div className={cn(css[variant], css[currentDevice], className)} onClick={e => e.preventDefault()}>

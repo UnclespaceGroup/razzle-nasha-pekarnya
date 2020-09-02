@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "razzle start",
+    "start-local-api": "cross-env RAZZLE_IS_LOCAL_API=true razzle start",
     "build": "razzle build",
     "test": "razzle test --env=jsdom",
     "start:prod": "cross-env NODE_ENV=production node build/server.js"
@@ -38,6 +39,7 @@
     "react-app-polyfill": "^1.0.6",
     "react-dom": "^16.13.1",
     "react-final-form": "^4.1.0",
+    "react-helmet": "^6.1.0",
     "react-icons": "^3.10.0",
     "react-id-swiper": "1.6.9",
     "react-markdown": "^4.3.1",

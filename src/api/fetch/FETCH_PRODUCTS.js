@@ -16,6 +16,7 @@ const FETCH_PRODUCTS = ({ limit }) => ({
 
       return _.map(parsedData, item => ({
         ...item,
+        subtitle: item.category?.title,
         to: PAGE_PRODUCTS + item.id
       }))
     }

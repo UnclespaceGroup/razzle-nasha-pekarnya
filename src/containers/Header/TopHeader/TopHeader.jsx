@@ -3,16 +3,24 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import css from './topHeader.module.scss'
 import Container from 'components/Container/Container'
-import { MdMenu, MdPhone } from 'react-icons/md/index'
+import { MdMenu } from 'react-icons/md/index'
 import DesktopOnly from 'utils/DesktopOnly'
 import Button from 'components/Button/Button'
 import cn from 'classnames'
 import useDevice from 'hooks/useDevice'
 import { PAGE_BASKET, PAGE_HOME } from 'constants/routes'
 import { Link } from 'react-router-dom'
+import { useRemoteData } from '@aic/react-remote-data-provider'
+import FETCH_CONTACTS from 'api/fetch/FETCH_CONTACTS'
+import { MdShoppingBasket } from 'react-icons/md'
 
 const TopHeader = ({ clickOpen, price }) => {
-  const { currentDevice, isSmall } = useDevice()
+  const { currentDevice } = useDevice()
+  const {
+    response: {
+      phone
+    } = {}
+  } = useRemoteData(FETCH_CONTACTS)
 
   return (
     <header className={cn(css.back, css[currentDevice])}>
@@ -33,12 +41,13 @@ const TopHeader = ({ clickOpen, price }) => {
           </Link>
           <div className={css.right}>
             <DesktopOnly>
-              <a href='tel:8 (800) 535 35 35' className={css.phone}>
-                {isSmall ? <MdPhone /> : '8 (800) 535 35 35'}
+              <a href={`tel:${phone}`} className={css.phone}>
+                {phone}
               </a>
             </DesktopOnly>
             <Button className={css.btnBasket} to={PAGE_BASKET}>
-              {price}
+              <span>{price}</span>
+              <MdShoppingBasket />
             </Button>
           </div>
         </Container>

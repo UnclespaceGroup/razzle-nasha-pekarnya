@@ -8,9 +8,16 @@ import { Link } from 'react-router-dom'
 import css from './sideHeader.module.scss'
 import useDevice from 'hooks/useDevice'
 import { MdClose, MdPhone } from 'react-icons/md'
+import { useRemoteData } from '@aic/react-remote-data-provider'
+import FETCH_CONTACTS from 'api/fetch/FETCH_CONTACTS'
 
 const SideHeader = ({ isOpen, onClose }) => {
   const { currentDevice } = useDevice()
+  const {
+    response: {
+      phone
+    } = {}
+  } = useRemoteData(FETCH_CONTACTS)
 
   return (
     <div
@@ -38,7 +45,7 @@ const SideHeader = ({ isOpen, onClose }) => {
         </div>
         <div className={css.bottom}>
           <MdPhone />
-          <a>8 800 555 35 35</a>
+          <a href={`tel:${phone}`}>{phone}</a>
         </div>
       </div>
       <div className={css.back} onClick={onClose} />

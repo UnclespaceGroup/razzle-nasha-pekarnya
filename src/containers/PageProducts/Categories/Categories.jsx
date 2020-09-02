@@ -26,7 +26,12 @@ const Categories = () => {
 
   return (
     <Container className={css[currentDevice]}>
-      <RowCards className={css.row} count={4} items={categories}>
+      <RowCards
+        className={css.row}
+        count={4}
+        items={categories}
+        cardClassName={css.card}
+      >
         <CardCategory />
       </RowCards>
     </Container>
