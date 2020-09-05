@@ -6,7 +6,7 @@ import css from './topBanner.module.scss'
 import Container from 'components/Container/Container'
 import BgImage from 'components/BgImage/BgImage'
 import Button from 'components/Button/Button'
-import { MdArrowForward } from 'react-icons/md'
+import { MdKeyboardArrowRight } from 'react-icons/md'
 import { PAGE_PRODUCTS } from 'constants/routes'
 
 const TopBanner = ({ title, text, img }) => {
@@ -25,7 +25,7 @@ const TopBanner = ({ title, text, img }) => {
           <div>
             <Button to={PAGE_PRODUCTS}>
               <span>Каталог товаров</span>
-              <MdArrowForward />
+              <MdKeyboardArrowRight />
             </Button>
           </div>
         </div>

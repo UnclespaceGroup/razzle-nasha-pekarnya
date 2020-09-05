@@ -8,13 +8,21 @@ import Title from 'components/Title/Title'
 import FETCH_NEWS from 'api/fetch/FETCH_NEWS'
 import CardNews from 'components/CardNews/CardNews'
 
-const News = ({ className, title, limit }) => {
+const News = ({
+  className,
+  title,
+  limit,
+  ...otherProps
+}) => {
   const { response: items } = useRemoteData(FETCH_NEWS({ limit }), [])
 
   return (
     <Container className={className}>
       <Title>{title}</Title>
-      <RowCards items={items}>
+      <RowCards
+        items={items}
+        {...otherProps}
+      >
         <CardNews />
       </RowCards>
     </Container>

@@ -5,8 +5,19 @@ import cn from 'classnames'
 import _ from 'lodash'
 import useDevice from 'hooks/useDevice'
 import css from './rowCards.module.scss'
+import CardLink from 'components/CardLink/CardLink'
+import { PAGE_PRODUCTS } from 'constants/routes'
 
-const RowCards = ({ className, items, children, renderChild, count, loaderProps, cardClassName }) => {
+const RowCards = ({
+  className,
+  items,
+  children,
+  renderChild,
+  count,
+  loaderProps,
+  cardClassName,
+  CardMoreComponent
+}) => {
   const { currentDevice } = useDevice()
 
   return (
@@ -20,6 +31,12 @@ const RowCards = ({ className, items, children, renderChild, count, loaderProps,
             {React.cloneElement(children, { ...item, loaderProps })}
           </li>
         )))}
+      {CardMoreComponent &&
+      <li
+        className={cn(css.card, css[`card_${count}`], cardClassName)}
+      >
+        {CardMoreComponent}
+      </li>}
     </ul>
   )
 }
@@ -30,6 +47,7 @@ RowCards.propTypes = {
   className: PropTypes.string,
   items: PropTypes.array,
   count: PropTypes.number,
-  loaderProps: PropTypes.object
+  loaderProps: PropTypes.object,
+  CardMoreComponent: PropTypes.object
 }
 export default React.memo(RowCards)
