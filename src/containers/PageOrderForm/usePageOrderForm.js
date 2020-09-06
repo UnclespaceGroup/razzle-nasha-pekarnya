@@ -5,6 +5,7 @@ import axios from 'axios'
 import { composeValidators, maxValue, minValue, required } from 'utils/validators'
 import { useHistory } from 'react-router'
 import { PAGE_ORDER_RESULT } from 'constants/ROUTES'
+import { botUrl } from 'api/axios/instance'
 
 const usePageOrderForm = () => {
   const history = useHistory()
@@ -70,18 +71,21 @@ const usePageOrderForm = () => {
   const onSubmit = data => {
     const orders = Object.values(basket)
 
-    axios.post('/send/', {
+    axios.post(botUrl, {
       orders,
       userData: data,
       price
     })
       .then(res => {
-        console.log(res)
-        history.push(PAGE_ORDER_RESULT, { orders, price, data })
+        const {
+          error
+        } = res?.data || {}
+        if (!error) {
+          history.push(PAGE_ORDER_RESULT, { orders, price, data })
+        }
       })
       .catch(e => {
         console.log(e)
-        history.push(PAGE_ORDER_RESULT, { orders, price, data }) // TODO убрать, временно
         alert('Что то пошло не так')
       })
   }
