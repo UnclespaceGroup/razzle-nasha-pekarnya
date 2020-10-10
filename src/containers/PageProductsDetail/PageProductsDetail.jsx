@@ -17,6 +17,7 @@ import ContactsBlock from 'components/ContactsBlock/ContactsBlock'
 import useProducts from 'hooks/useProducts'
 import { PAGE_404 } from 'constants/routes'
 import { getDiscountPrice } from 'utils/priceUtils'
+import Helmet from 'components/Helmet/Helmet'
 
 const PageProductsDetail = () => {
   const { slug } = useParams()
@@ -43,12 +44,21 @@ const PageProductsDetail = () => {
   const btnAddClick = useCallback(() => addBasket(id, 1), [addBasket, id])
   const addToBasket = useCallback((count) => addBasket(id, count), [addBasket, id])
 
+  const helmetData = useMemo(() => ({
+    title,
+    description: text
+  }), [
+    title,
+    text
+  ])
+
   if (isNotFound) {
     return <Redirect to={PAGE_404} />
   }
 
   return (
     <div className={css[currentDevice]}>
+      <Helmet {...helmetData} />
       <Header />
       <Container className={css.row}>
         <div className={css.left}>

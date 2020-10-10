@@ -6,7 +6,9 @@ import {
   PAGE_BASKET,
   PAGE_HOME,
   PAGE_NEWS,
-  PAGE_NEWS_DETAIL, PAGE_ORDER, PAGE_ORDER_RESULT,
+  PAGE_NEWS_DETAIL,
+  PAGE_ORDER,
+  PAGE_ORDER_RESULT,
   PAGE_PRODUCTS_DETAIL
 } from 'constants/routes'
 import PageNews from 'containers/PageNews/PageNews'

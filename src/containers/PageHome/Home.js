@@ -13,16 +13,15 @@ import CardLink from 'components/CardLink/CardLink'
 import { PAGE_NEWS } from 'constants/routes'
 import Products from 'containers/Products/Products'
 import HomeSlider from 'containers/PageHome/HomeSlider/HomeSlider'
+import useMeta from 'api/hooks/useMeta'
 
 function Home () {
   const { currentDevice } = useDevice()
-  const {
-    response: helmetData
-  } = useRemoteData(FETCH_META({ page: 'home' }))
+  const { mainPage: mainPageMeta } = useMeta()
 
   return (
     <Bg color='grey' className={cn(css[currentDevice], css.wrapper)}>
-      <Helmet {...helmetData} />
+      <Helmet {...mainPageMeta} />
       <Header />
       <HomeSlider />
       <div className={css.products}>

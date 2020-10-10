@@ -14,6 +14,8 @@ import CardBasket from 'components/CardBasket/CardBasket'
 import EmptyBasket from 'components/EmptyBasket/EmptyBasket'
 import useDevice from 'hooks/useDevice'
 import css from './pageBasket.module.scss'
+import useMeta from 'api/hooks/useMeta'
+import Helmet from 'components/Helmet/Helmet'
 
 const PageBasket = () => {
   const { currentDevice } = useDevice()
@@ -23,11 +25,13 @@ const PageBasket = () => {
 
   const selectedCards = useMemo(() =>
     _.filter(cards, card => card.count > 0),
-  [cards]
-  )
+  [cards])
+
+  const { basket: basketMeta } = useMeta()
 
   return (
     <Bg color='grey' className={css[currentDevice]}>
+      <Helmet {...basketMeta} />
       <Header />
       <Container className={css.container}>
         <div className={css.header}>

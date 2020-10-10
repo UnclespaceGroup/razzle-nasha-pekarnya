@@ -1,18 +1,18 @@
 import { axiosInstance } from 'api/axios/instance'
 
-export const FETCH_META = ({ page }) => ({
+export const FETCH_META = {
   axiosInstance,
   request: {
-    url: '/metas',
-    params: {
-      page
-    }
+    url: '/meta'
   },
   requestFunctions: {
     transformResponse: data => {
       const parsedData = JSON.parse(data)
-      return parsedData?.[0]
+
+      return {
+        ...parsedData
+      }
     }
   }
-})
+}
 export default FETCH_META

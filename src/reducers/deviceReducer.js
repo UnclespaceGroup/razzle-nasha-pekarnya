@@ -1,7 +1,6 @@
 const initialState = {
   currentDevice: '',
   isLarge: false,
-  isMedium: false,
   isSmall: false
 }
 

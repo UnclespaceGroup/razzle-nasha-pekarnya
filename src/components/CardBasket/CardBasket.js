@@ -7,12 +7,12 @@ import { MdDelete } from 'react-icons/md'
 import useDevice from 'hooks/useDevice'
 import Picker from 'components/Picker/Picker'
 
-const CardBasket = ({ img, title, discountPrice, count, onChange, className }) => {
+const CardBasket = ({ cardImg, title, discountPrice, count, onChange, className }) => {
   const { currentDevice } = useDevice()
   return (
     <div className={cn(css.container, css[currentDevice], className)}>
       <div className={css.left}>
-        <BgImage img={img} className={css.img} />
+        <BgImage img={cardImg} className={css.img} />
         <div>
           <div className={css.item}>
             <div className={css.title}>Наименование</div>

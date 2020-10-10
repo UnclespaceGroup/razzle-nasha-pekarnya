@@ -6,7 +6,7 @@ import ReactHelmet from 'react-helmet'
 const Helmet = ({ title, description }) => {
   return (
     <ReactHelmet>
-      <title>{`Наша пекарня - ${title}`}</title>
+      <title>{`Наша пекарня - ${title || ''}`}</title>
       {description && <meta name='description' content={description} />}
     </ReactHelmet>
   )

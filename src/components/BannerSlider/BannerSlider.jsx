@@ -7,6 +7,7 @@ import Container from 'components/Container/Container'
 import css from './bannerSlider.module.scss'
 import BgImage from 'components/BgImage/BgImage'
 import useDevice from 'hooks/useDevice'
+import Button from 'components/Button/Button'
 
 const params = {
   autoplay: {
@@ -31,13 +32,15 @@ const BannerSlider = ({ items }) => {
         {_.map(items, ({
           title,
           text,
-          img
+          img,
+          link
         }, key) => (
           <span key={key} className={css.slide}>
             <Container>
               <div className={css.wrapper}>
                 <h2 className={css.title}>{title}</h2>
                 <div className={css.text}>{text}</div>
+                {link && <Button className={css.btn} to={link}>Подробнее</Button>}
               </div>
             </Container>
             <BgImage className={css.img} img={img} />

@@ -11,10 +11,12 @@ import Button from 'components/Button/Button'
 import Attention from 'components/Attention/Attention'
 import CheckBox from 'components/CheckBox/CheckBox'
 import TextArea from 'components/TextArea/TextArea'
-import { FiPlus } from 'react-icons/fi'
 import useDevice from 'hooks/useDevice'
+import useMeta from 'api/hooks/useMeta'
+import Helmet from 'components/Helmet/Helmet'
 
 const PageOrderForm = () => {
+  const { form: formMeta } = useMeta()
   const { onSubmit, formData, price } = usePageOrderForm()
   const { currentDevice } = useDevice()
 
@@ -25,6 +27,7 @@ const PageOrderForm = () => {
       render={({ handleSubmit, submitFailed, valid, ...props }) => (
         <div className={css[currentDevice]}>
           <Header />
+          <Helmet {...formMeta} />
           <Container className={css.container}>
             <BackLink />
             <div className={css.title}>Сделай заказ прямо сейчас</div>
@@ -74,7 +77,7 @@ const PageOrderForm = () => {
             />
             <Field component={CheckBox} {...formData.agree} />
             <div className={css.footer}>
-              <Button height={64} rightIcon={<FiPlus />} variant='black' type='submit' onClick={handleSubmit}>
+              <Button height={64} variant='black' type='submit' onClick={handleSubmit}>
                 Заказать
               </Button>
               <span className={css.price}>{price}.00 р</span>

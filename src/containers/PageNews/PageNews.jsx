@@ -7,12 +7,16 @@ import Header from 'containers/Header/Header'
 import Bg from 'components/Bg/Bg'
 import Title from 'components/Title/Title'
 import Container from 'components/Container/Container'
+import useMeta from 'api/hooks/useMeta'
+import Helmet from 'components/Helmet/Helmet'
 
 const PageNews = () => {
   const { currentDevice } = useDevice()
+  const { news: newsMeta } = useMeta()
 
   return (
     <Bg color='grey' className={css[currentDevice]}>
+      <Helmet {...newsMeta} />
       <Header />
       <Container>
         <Title>Новости и Акции</Title>
