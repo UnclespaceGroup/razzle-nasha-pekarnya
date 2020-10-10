@@ -7,10 +7,8 @@ import {
   PAGE_HOME,
   PAGE_NEWS,
   PAGE_NEWS_DETAIL, PAGE_ORDER, PAGE_ORDER_RESULT,
-  PAGE_PRODUCTS,
   PAGE_PRODUCTS_DETAIL
 } from 'constants/routes'
-import PageProducts from 'containers/PageProducts/PageProducts'
 import PageNews from 'containers/PageNews/PageNews'
 import PageAbout from 'containers/PageAbout/PageAbout'
 import PageBasket from 'containers/PageBasket/PageBasket'
@@ -23,7 +21,6 @@ import Page404 from 'containers/Page404/Page404'
 const Routes = () => (
   <Switch>
     <Route exact path={PAGE_HOME} component={Home} />
-    <Route exact path={PAGE_PRODUCTS} component={PageProducts} />
     <Route exact path={PAGE_PRODUCTS_DETAIL} component={PageProductsDetail} />
     <Route exact path={PAGE_NEWS} component={PageNews} />
     <Route exact path={PAGE_NEWS_DETAIL} component={PageNewsDetail} />

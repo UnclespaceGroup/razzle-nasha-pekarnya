@@ -13,6 +13,7 @@ import Helmet from 'components/Helmet/Helmet'
 import HomeSimpleBanner from 'containers/PageHome/HomeSimpleBanner/HomeSimpleBanner'
 import CardLink from 'components/CardLink/CardLink'
 import { PAGE_NEWS } from 'constants/routes'
+import Products from 'containers/Products/Products'
 
 function Home () {
   const { currentDevice } = useDevice()
@@ -25,10 +26,9 @@ function Home () {
       <Helmet {...helmetData} />
       <Header />
       <HomeTopBanner />
-      <HomeProducts
-        title='Популярные заказы'
-        className={css.products}
-      />
+      <div className={css.products}>
+        <Products />
+      </div>
       <HomeSimpleBanner className={css.banner} />
       <News
         title='Последние новости'

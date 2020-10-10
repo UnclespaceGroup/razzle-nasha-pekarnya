@@ -4,7 +4,7 @@ import cn from 'classnames'
 import css from './BgImage.module.scss'
 import getImgName from 'utils/getImgName'
 
-const BgImage = ({ img, className, children, local, ...otherProps }) => {
+const BgImage = ({ img, className, children, local, loaderProps, ...otherProps }) => {
   const imgUrl = useMemo(() => local ? img : getImgName(img), [img, local])
 
   return (

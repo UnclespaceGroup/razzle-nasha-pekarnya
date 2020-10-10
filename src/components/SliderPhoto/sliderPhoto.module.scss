@@ -1,8 +1,50 @@
+@mixin button-arrow {
+  opacity: .3;
+  transition: all 200ms ease-in;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0!important;
+  bottom: 0!important;
+  right: 0!important;
+  margin-top: 0!important;
+  height: 100%!important;
+  width: 15%!important;
+
+  &:before {
+    content: '';
+    display: block;
+    background: url("./assets/keyboard_arrow_right.svg") no-repeat center;
+    background-size: contain;
+    width: 6.4rem;
+    height: 6.4rem;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
 :global {
+  .swiper-button-disabled {
+    opacity: .1!important;
+  }
   .swiper-button-next {
-    background-color: rgba(0,0,0,0.4);
-    position: absolute;
-    top: 0!important;
-    bottom: 0!important;
+    @include button-arrow;
+    background: linear-gradient(-90deg, rgba(107,59,0,1) 0%, rgba(107,59,0,0.8855917366946778) 38%, rgba(107,59,0,0.5466561624649859) 81%, rgba(107,59,0,0) 100%)!important;
+  }
+  .swiper-button-prev {
+    @include button-arrow;
+    left: 0!important;
+    background: linear-gradient(90deg, rgba(107,59,0,1) 0%, rgba(107,59,0,0.8855917366946778) 38%, rgba(107,59,0,0.5466561624649859) 81%, rgba(107,59,0,0) 100%)!important;
+
+    &:before {
+      transform: rotate(180deg);
+    }
+  }
+  .swiper-pagination-bullet-active {
+    background: #7D5A3A!important;
   }
 }

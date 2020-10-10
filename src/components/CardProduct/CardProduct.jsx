@@ -11,7 +11,7 @@ import LabelTag from 'components/LabelTag/LabelTag'
 import Loader from 'components/Loader/Loader'
 import { MdArrowForward } from 'react-icons/md'
 
-const CardProduct = ({ className, to, img, title, price, discountPrice, discount, loaderProps, subtitle, ...pickerProps }) => {
+const CardProduct = ({ className, to, cardImg, title, price, discountPrice, discount, loaderProps, subtitle, ...pickerProps }) => {
   const { currentDevice } = useDevice()
   const Tag = to ? Link : 'div'
   const oldPrice = discount && price
@@ -19,7 +19,7 @@ const CardProduct = ({ className, to, img, title, price, discountPrice, discount
   return (
     <Loader height={380} {...loaderProps}>
       <Tag to={to} className={cn(css[currentDevice], css.container)}>
-        <BgImage img={img} className={css.img}>
+        <BgImage img={cardImg} className={css.img}>
           {discount && <LabelTag title={`скидка ${discount}%`} />}
         </BgImage>
         <div className={css.picker}>

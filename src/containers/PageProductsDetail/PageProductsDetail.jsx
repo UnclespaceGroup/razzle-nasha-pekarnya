@@ -24,6 +24,7 @@ const PageProductsDetail = () => {
     response: {
       title,
       img,
+      images,
       price,
       text,
       discount,
@@ -54,7 +55,7 @@ const PageProductsDetail = () => {
           <BackLink />
           <SliderPhoto
             className={css.slider}
-            items={[img]}
+            items={images}
             slideClassName={css.img}
           />
         </div>
