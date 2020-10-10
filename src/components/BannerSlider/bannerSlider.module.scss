@@ -1,0 +1,63 @@
+.container {
+  :global {
+    .swiper-pagination-bullet-active {
+      background: white!important;
+    }
+  }
+}
+
+.wrapper {
+  position: relative;
+  z-index: 10;
+  height: 48rem;
+  padding: 16rem 0 12rem;
+}
+
+.isSmall .wrapper {
+  height: 36rem;
+}
+
+.title {
+  color: white;
+  font-size: 6.4rem;
+  font-weight: 500;
+}
+
+.isSmall .title {
+  font-size: 3.2rem;
+}
+
+.text {
+  color: white;
+  margin-top: 1.6rem;
+  font-weight: 300;
+}
+
+.isSmall .text {
+  font-size: 1.2rem;
+}
+
+.slide {
+  position: relative;
+  background: #7D5A3A;
+}
+
+.img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 50%;
+
+  &:before {
+    content: '';
+    display: block;
+    margin-left: -2px;
+    height: 100%;
+    background: linear-gradient(89.93deg, #7D5A3A 0.08%, rgba(125, 90, 58, 0.74) 99.95%);
+  }
+}
+
+.isSmall .img {
+  width: 100%;
+}

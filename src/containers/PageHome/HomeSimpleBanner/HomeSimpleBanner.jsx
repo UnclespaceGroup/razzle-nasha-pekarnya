@@ -15,6 +15,7 @@ const HomeSimpleBanner = (props) => {
     <Banner
       {...banner}
       {...props}
+      AsTitle='h1'
     />
   )
 }

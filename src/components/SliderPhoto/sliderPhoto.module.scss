@@ -48,3 +48,11 @@
     background: #7D5A3A!important;
   }
 }
+
+.isSmall {
+  :global {
+    .swiper-button-next, .swiper-button-prev {
+      display: none;
+    }
+  }
+}

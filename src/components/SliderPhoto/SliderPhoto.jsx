@@ -7,6 +7,7 @@ import PropTypes from 'prop-types'
 import BgImage from 'components/BgImage/BgImage'
 import css from './sliderPhoto.module.scss'
 import 'react-id-swiper/src/styles/css/swiper.css'
+import useDevice from 'hooks/useDevice'
 
 const params = {
   pagination: {
@@ -33,8 +34,10 @@ const SliderPhoto = ({ className, items, slideClassName }) => {
       />
     )
   }
+  const { currentDevice } = useDevice()
+
   return (
-    <div className={cn(className, css.container)}>
+    <div className={cn(className, css[currentDevice], css.container)}>
       <Swiper {...params}>
         {_.map(items, (item, key) => (
           <span key={key}>
