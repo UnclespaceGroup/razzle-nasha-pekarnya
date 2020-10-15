@@ -1,17 +1,23 @@
+@import "styles/_variables";
+
+.background {
+  background-color: $colorBrown;
+}
+
 .isLarge {
   position: relative;
-  height: 52rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #7D5A3A;
+  padding: 12rem 0;
+  min-height: 48rem;
 }
 
 .isSmall {
-  background-color: #7D5A3A;
   position: relative;
   height: auto;
   padding: 6.4rem 0;
+  min-height: 32rem;
 }
 
 .wrapper {
@@ -71,12 +77,12 @@
     bottom: 0;
     left: 0;
     height: 100%;
-    background: rgba(125, 90, 58, 0.6);
+    background: $gradientBrown;
   }
 }
 
 .isSmall .img {
   &:before {
-    background: rgba(125, 90, 58, 0.9);
+    background: $gradientBrown;
   }
 }

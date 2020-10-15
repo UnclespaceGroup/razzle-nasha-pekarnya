@@ -1,5 +1,7 @@
+@import "styles/_variables";
+
 .wrapper {
-  background-color: rgba(125, 90, 58, .9);
+  background-color: $colorBrownDarkOpacity;
   padding: 6.4rem 0;
 }
 
@@ -71,7 +73,7 @@
 }
 
 .bottom {
-  background-color: #F2994A;
+  background-color: $colorYellow;
   padding: 2.4rem 0;
   font-size: 2rem;
 }

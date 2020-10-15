@@ -11,7 +11,7 @@ const Banner = ({ className, title, text, img, AsTitle }) => {
   const { currentDevice } = useDevice()
 
   return (
-    <div className={cn(css[currentDevice], css.container, className)}>
+    <div className={cn(css[currentDevice], css.background, className)}>
       <Container>
         <div className={css.wrapper}>
           <AsTitle className={css.title}>{title}</AsTitle>

@@ -1,3 +1,5 @@
+@import "styles/_variables";
+
 .isLarge, .isSmall {
   display: flex;
   flex-direction: column;
@@ -5,12 +7,12 @@
   padding: 2.4rem;
   height: 100%;
   width: 100%;
-  background-color: #7D5A3A;
+  background-color: $colorBrown;
   border-radius: 1.6rem;
   transition: all 200ms ease-in;
 
   &:hover {
-    background-color: #8a552c;
+    opacity: .9;
   }
 }
 

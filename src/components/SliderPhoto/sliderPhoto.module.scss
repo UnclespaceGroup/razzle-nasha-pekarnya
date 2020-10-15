@@ -1,3 +1,5 @@
+@import "styles/_variables";
+
 @mixin button-arrow {
   opacity: .3;
   transition: all 200ms ease-in;
@@ -33,12 +35,12 @@
   }
   .swiper-button-next {
     @include button-arrow;
-    background: linear-gradient(-90deg, rgba(107,59,0,1) 0%, rgba(107,59,0,0.8855917366946778) 38%, rgba(107,59,0,0.5466561624649859) 81%, rgba(107,59,0,0) 100%)!important;
+    background: $gradientSlider!important;
   }
   .swiper-button-prev {
     @include button-arrow;
     left: 0!important;
-    background: linear-gradient(90deg, rgba(107,59,0,1) 0%, rgba(107,59,0,0.8855917366946778) 38%, rgba(107,59,0,0.5466561624649859) 81%, rgba(107,59,0,0) 100%)!important;
+    background: $gradientSliderLeft!important;
 
     &:before {
       transform: rotate(180deg);

@@ -1,6 +1,8 @@
+@import "styles/_variables";
+
 .container {
   white-space: nowrap;
-  background-color: #F2994A;
+  background-color: $colorBrown;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -59,4 +61,10 @@
 .orange {
   background-color: #FF8C4A!important;
   color: white!important;
+}
+
+.yellow {
+  background-color: $colorYellow;
+  color: $colorBrown;
+  font-weight: 500;
 }

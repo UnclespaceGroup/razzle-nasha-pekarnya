@@ -4,7 +4,7 @@
 }
 
 
-.container {
+.container-d {
   width: 124.8rem;
   margin: 0 auto;
 }
@@ -34,3 +34,13 @@
 @mixin -container-m {
   margin: 0 -1.4rem;
 }
+
+$colorBrown: #5b362e;
+$colorBrownOpacity: rgba(91,54,46, .7);
+$colorBrownDarkOpacity: rgba(91,54,46, .9);
+
+$gradientBrown: linear-gradient(89.93deg, $colorBrown 0.08%, $colorBrownOpacity 99.95%);
+$gradientSlider: linear-gradient(-90deg, rgba(91,54,46, 1) 0%, rgba(91,54,46, .8) 38%, rgba(91,54,46, .5) 81%, rgba(91,54,46,0) 100%);
+$gradientSliderLeft: linear-gradient(90deg, rgba(91,54,46, 1) 0%, rgba(91,54,46, .8) 38%, rgba(91,54,46, .5) 81%, rgba(91,54,46,0) 100%);
+
+$colorYellow: #ffee02;
