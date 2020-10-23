@@ -14,6 +14,7 @@ import { PAGE_NEWS } from 'constants/routes'
 import Products from 'containers/Products/Products'
 import HomeSlider from 'containers/PageHome/HomeSlider/HomeSlider'
 import useMeta from 'api/hooks/useMeta'
+import Categories from 'containers/Categories/Categories'
 
 function Home () {
   const { currentDevice } = useDevice()
@@ -23,6 +24,7 @@ function Home () {
     <Bg color='grey' className={cn(css[currentDevice], css.wrapper)}>
       <Helmet {...mainPageMeta} />
       <Header />
+      <Categories />
       <HomeSlider />
       <div className={css.products}>
         <Products />

@@ -10,6 +10,7 @@ import useDevice from 'hooks/useDevice'
 import { useRemoteData } from '@aic/react-remote-data-provider'
 import FETCH_CATEGORIES from 'api/fetch/FETCH_CATEGORIES'
 import Title from 'components/Title/Title'
+import { getCategoryBlockId } from 'utils/getCategoryBlockId'
 
 const Products = () => {
   const { cards } = useProducts()
@@ -30,7 +31,7 @@ const Products = () => {
   return (
     <Container className={css[currentDevice]}>
       {_.map(lists, ({ title, items, id }, key) => (
-        <div key={key} className={css.block}>
+        <div id={getCategoryBlockId(id)} key={key} className={css.block}>
           <Title>{title}</Title>
           <RowCards items={items}>
             <CardProduct />
