@@ -3,10 +3,6 @@
   position: relative;
 }
 
-.isSmall.container {
-  width: 100%;
-}
-
 .error {
   color: red!important;
 }
@@ -30,12 +26,12 @@
   width: 100%;
   background-color: #F2F2F2;
   border-radius: .4rem;
-}
 
-.isSmall .input {
-  padding: 0 1.2rem;
-  height: 5.4rem;
-  font-size: 2rem;
+  @include media-mobile {
+    padding: 0 1.2rem;
+    height: 5.4rem;
+    font-size: 2rem;
+  }
 }
 
 .prompt {

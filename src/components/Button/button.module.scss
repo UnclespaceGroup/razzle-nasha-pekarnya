@@ -28,27 +28,24 @@
   svg:last-child {
     margin-left: 2.4rem;
   }
-}
 
-.isSmall {
-  font-size: 2rem;
-}
+  @include media-mobile {
+    width: 100%;
+    font-size: 2rem;
+    padding: 0 1.6rem;
+    justify-content: center;
 
-.isSmall {
-  width: 100%;
-  padding: 0 1.6rem;
-  justify-content: center;
+    svg {
+      width: 2.4rem;
+      height: auto;
+    }
 
-  svg {
-    width: 2.4rem;
-    height: auto;
-  }
-
-  svg:first-child {
-    margin-right: .8rem;
-  }
-  svg:last-child {
-    margin-left: .8rem;
+    svg:first-child {
+      margin-right: .8rem;
+    }
+    svg:last-child {
+      margin-left: .8rem;
+    }
   }
 }
 

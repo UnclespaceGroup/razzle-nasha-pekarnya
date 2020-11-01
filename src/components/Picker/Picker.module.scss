@@ -12,14 +12,14 @@
   &:hover {
     box-shadow: 0 .2rem .8rem rgba(0, 0, 0, 0.5);
   }
-}
 
-.isSmall .container {
-  height: 4.8rem;
-  font-size: 2.4rem;
+  @include media-mobile {
+    height: 4.8rem;
+    font-size: 2.4rem;
 
-  & * :hover {
-    box-shadow: 0 .1rem .4rem rgba(0, 0, 0, 0.25);
+    & * :hover {
+      box-shadow: 0 .1rem .4rem rgba(0, 0, 0, 0.25);
+    }
   }
 }
 
@@ -27,10 +27,12 @@
   composes: container;
   cursor: pointer;
   width: 6.4rem;
+
+  @include media-mobile {
+    width: 4.8rem;
+  }
 }
-.isSmall .plus {
-  width: 4.8rem;
-}
+
 .picker {
   composes: container;
   color: white;
@@ -38,10 +40,12 @@
   width: 14rem;
   position: relative;
   overflow: hidden;
+
+  @include media-mobile {
+    width: 12rem;
+  }
 }
-.isSmall .picker {
-  width: 12rem;
-}
+
 .sign {
   transition: all 200ms ease-in;
   cursor: pointer;
@@ -61,14 +65,15 @@
   }
 }
 
-.isSmall .sign:hover {
-  background-color: transparent;
+@include media-mobile {
+  .sign:hover {
+    background-color: transparent;
+  }
 }
 
 .signMinus {
   composes: sign;
   left: 0;
-
 }
 .signPlus {
   composes: sign;
@@ -84,10 +89,21 @@
     &:hover {
       box-shadow: none;
     }
+
+    @include media-mobile {
+      height: 4rem;
+      border-radius: 3.2rem;
+      background-color: #4F4F4F;
+      font-size: 1.6rem;
+    }
   }
 
   .picker {
     width: 20rem;
+
+    @include media-mobile {
+      width: 12rem;
+    }
   }
 
   .sign {
@@ -99,31 +115,12 @@
     &:hover {
       background-color: #828282;
     }
-  }
-}
 
-.isSmall.black {
-  .container {
-    color: white;
-    height: 4rem;
-    border-radius: 3.2rem;
-    background-color: #4F4F4F;
-    font-size: 1.6rem;
-  }
-
-  .plus {
-    height: 4rem;
-    width: 4rem;
-  }
-
-  .picker {
-    width: 12rem;
-  }
-
-  .sign {
-    color: white;
-    width: 4rem;
-    font-size: 2.4rem;
-    font-weight: 400;
+    @include media-mobile {
+      color: white;
+      width: 4rem;
+      font-size: 2.4rem;
+      font-weight: 400;
+    }
   }
 }

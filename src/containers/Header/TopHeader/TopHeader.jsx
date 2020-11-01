@@ -6,7 +6,6 @@ import { useRemoteData } from '@aic/react-remote-data-provider'
 import { MdShoppingBasket, MdMenu } from 'react-icons/md'
 // components
 import Container from 'components/Container/Container'
-import DesktopOnly from 'utils/DesktopOnly'
 import Button from 'components/Button/Button'
 // constants
 import { PAGE_BASKET, PAGE_HOME } from 'constants/routes'
@@ -28,21 +27,17 @@ const TopHeader = ({ clickOpen, price }) => {
             <button onClick={clickOpen}>
               <MdMenu className={css.burger} />
             </button>
-            <DesktopOnly>
-              <div className={css.text}>
+            <div className={css.text}>
               Доставка в Сыктывкаре<br />до 50 минут
-              </div>
-            </DesktopOnly>
+            </div>
           </div>
           <Link to={PAGE_HOME}>
             <img className={css.logo} src='/images/logo-brown.svg' alt='' />
           </Link>
           <div className={css.right}>
-            <DesktopOnly>
-              <a href={`tel:${phone}`} className={css.phone}>
-                {phone}
-              </a>
-            </DesktopOnly>
+            <a href={`tel:${phone}`} className={css.phone}>
+              {phone}
+            </a>
             <Button className={css.btnBasket} to={PAGE_BASKET}>
               <span>{price}</span>
               <MdShoppingBasket />

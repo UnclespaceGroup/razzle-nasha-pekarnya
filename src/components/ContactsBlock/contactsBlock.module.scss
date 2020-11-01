@@ -1,10 +1,10 @@
 .flex {
   width: 100%;
   column-count: 2;
-}
 
-.isSmall.flex {
-  column-count: 1;
+  @include media-mobile {
+    column-count: 1;
+  }
 }
 
 .contact {
@@ -17,16 +17,16 @@
   color: #4F4F4F;
   font-size: 1.2rem;
   margin-bottom: .4rem;
-}
 
-.isSmall .title {
-  font-size: 1rem;
+  @include media-mobile {
+    font-size: 1rem;
+  }
 }
 
 .value {
   font-size: 1.8rem;
-}
 
-.isSmall .value {
-  font-size: 1.4rem;
+  @include media-mobile {
+    font-size: 1.4rem;
+  }
 }

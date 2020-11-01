@@ -4,13 +4,11 @@ import PropTypes from 'prop-types'
 import css from 'components/CardBasket/cardBasket.module.scss'
 import BgImage from 'components/BgImage/BgImage'
 import { MdDelete } from 'react-icons/md'
-import useDevice from 'hooks/useDevice'
 import Picker from 'components/Picker/Picker'
 
 const CardBasket = ({ cardImg, title, discountPrice, count, onChange, className }) => {
-  const { currentDevice } = useDevice()
   return (
-    <div className={cn(css.container, css[currentDevice], className)}>
+    <div className={cn(css.container, className)}>
       <div className={css.left}>
         <BgImage img={cardImg} className={css.img} />
         <div>

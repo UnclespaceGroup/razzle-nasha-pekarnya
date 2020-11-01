@@ -1,12 +1,10 @@
 // packages
 import React from 'react'
 import _ from 'lodash'
-import cn from 'classnames'
 import Swiper from 'react-id-swiper'
 import Container from 'components/Container/Container'
 import css from './bannerSlider.module.scss'
 import BgImage from 'components/BgImage/BgImage'
-import useDevice from 'hooks/useDevice'
 import Button from 'components/Button/Button'
 
 const params = {
@@ -25,9 +23,8 @@ const params = {
 }
 
 const BannerSlider = ({ items }) => {
-  const { currentDevice } = useDevice()
   return (
-    <span className={cn(css[currentDevice], css.container)}>
+    <span className={css.container}>
       <Swiper {...params}>
         {_.map(items, ({
           title,

@@ -1,8 +1,8 @@
 
-.isLarge {
-  composes: container-d;
-}
+.container {
+  @include container;
 
-.isSmall {
-  composes: container-m;
+  @include media-mobile {
+    @include container-m;
+  }
 }

@@ -34,6 +34,10 @@
     transition: all 200ms ease-in;
     background-color: rgba(0, 0, 0, 0);
   }
+
+  @include media-mobile {
+    height: 20rem;
+  }
 }
 
 .picker {
@@ -44,37 +48,33 @@
   transform: translateY(3.2rem);
   display: flex;
   justify-content: flex-end;
-}
 
-.isSmall .picker {
-  margin-top: -4.8rem;
-  transform: translateY(2.4rem);
-}
-
-.isSmall .img {
-  height: 20rem;
+  @include media-mobile {
+    margin-top: -4.8rem;
+    transform: translateY(2.4rem);
+  }
 }
 
 .title {
   font-size: 2.4rem;
   font-weight: 500;
-}
 
-.isSmall .title {
-  font-size: 1.8rem;
-  margin-bottom: 1.2rem;
+  @include media-mobile {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+  }
 }
 
 .subtitle {
   font-size: 1.4rem;
   color: #4F4F4F;
   margin-bottom: .2rem;
-}
 
-.isSmall .subtitle {
-  width: 50%;
-  font-size: 1.2rem;
-  margin-bottom: 0;
+  @include media-mobile {
+    width: 50%;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+  }
 }
 
 .price {
@@ -82,6 +82,10 @@
   font-size: 2.4rem;
   font-weight: bold;
   color: #4F4F4F;
+
+  @include media-mobile {
+    font-size: 1.8rem;
+  }
 }
 
 .oldPrice {
@@ -92,10 +96,6 @@
   text-decoration: line-through;
 }
 
-.isSmall .price {
-  font-size: 1.8rem;
-}
-
 .wrapper {
   position: relative;
   height: 14rem;
@@ -103,11 +103,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
 
-.isSmall .wrapper {
-  height: auto;
-  padding: 1.6rem;
+  @include media-mobile {
+    height: auto;
+    padding: 1.6rem;
+  }
 }
 
 .arrow {
@@ -116,13 +116,16 @@
   bottom: 1.6rem;
   width: 3.6rem;
   height: auto;
-}
 
-.isLarge .arrow {
   opacity: 0;
   transition: all 200ms ease-in;
 
   &:hover {
     color: orange;
   }
+
+  @include media-mobile {
+    opacity: 1;
+  }
 }
+

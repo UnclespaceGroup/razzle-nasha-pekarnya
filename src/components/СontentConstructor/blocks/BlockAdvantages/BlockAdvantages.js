@@ -4,13 +4,10 @@ import css from './blockAdvantages.module.scss'
 import BgImage from 'components/BgImage/BgImage'
 import Container from 'components/Container/Container'
 import RowCards from 'components/RowCards/RowCards'
-import useDevice from 'hooks/useDevice'
 
 const BlockAdvantages = ({ items }) => {
-  const { currentDevice } = useDevice()
-
   return (
-    <Container className={css[currentDevice]}>
+    <Container>
       <RowCards
         className={css.container}
         items={items}

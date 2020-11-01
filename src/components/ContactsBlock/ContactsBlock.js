@@ -1,8 +1,7 @@
 import React from 'react'
-import css from 'components/ContactsBlock/contactsBlock.module.scss'
+import css from './contactsBlock.module.scss'
 import cn from 'classnames'
 import PropTypes from 'prop-types'
-import useDevice from 'hooks/useDevice'
 
 const contacts = [
   {
@@ -27,10 +26,11 @@ const contacts = [
   }
 ]
 
+// todo добавить в CMS
+
 const ContactsBlock = ({ className }) => {
-  const { currentDevice } = useDevice()
   return (
-    <div className={cn(css.flex, css[currentDevice], className)}>
+    <div className={cn(css.flex, className)}>
       {
         contacts.map(({ title, value }, key) => (
           <div className={css.contact} key={key}>

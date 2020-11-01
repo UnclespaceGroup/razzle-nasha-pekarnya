@@ -3,23 +3,21 @@
   width: 84rem;
   margin-bottom: 6rem;
   margin-left: auto;
+
+  @include media-mobile {
+    width: auto;
+    margin-top: 4.2rem;
+    margin-bottom: 6rem;
+    font-size: 1.8rem;
+  }
 }
 
 .title {
   font-size: 3.6rem;
   font-weight: bold;
   margin-bottom: 2.4rem;
-}
 
-.isSmall {
-  .block {
-    width: auto;
-    margin-top: 4.2rem;
-    margin-bottom: 6rem;
-    font-size: 1.8rem;
-  }
-
-  .title {
+  @include media-mobile {
     font-size: 2.8rem;
     font-weight: bold;
   }

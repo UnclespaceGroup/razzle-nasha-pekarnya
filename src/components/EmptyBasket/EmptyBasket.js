@@ -1,15 +1,12 @@
 import React from 'react'
-import cn from 'classnames'
 import css from 'components/EmptyBasket/emptyBasket.module.scss'
 import BgImage from 'components/BgImage/BgImage'
 import { PAGE_HOME } from 'constants/ROUTES'
-import useDevice from 'hooks/useDevice'
 import Button from 'components/Button/Button'
 
 const EmptyBasket = () => {
-  const { currentDevice } = useDevice()
   return (
-    <div className={cn(css.container, css[currentDevice])}>
+    <div className={css.container}>
       <BgImage local img='/images/empty-basket-icon.png' className={css.basket} />
       <h2 className={css.title}>Ваша корзина пуста</h2>
       <div className={css.text}>

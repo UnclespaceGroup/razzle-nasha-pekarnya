@@ -3,21 +3,19 @@
   margin-bottom: 6rem;
   height: 45.6rem;
   border-radius: .8rem;
+
+  @include media-mobile {
+    margin-top: 2.4rem;
+    margin-bottom: 6rem;
+    height: 24rem;
+  }
 }
 
 .title {
   text-align: right;
   margin-top: 1.6rem;
-}
 
-.isSmall {
-  .block {
-    margin-top: 2.4rem;
-    margin-bottom: 6rem;
-    height: 24rem;
-  }
-
-  .title {
+  @include media-mobile {
     text-align: right;
     margin-top: 1.6rem;
   }

@@ -1,12 +1,9 @@
 import React from 'react'
-import cn from 'classnames'
-import useDevice from 'hooks/useDevice'
 import css from './contacts.module.scss'
 
 const Contacts = ({ className, contacts }) => {
-  const { currentDevice } = useDevice()
   return (
-    <div className={cn(className, css[currentDevice])}>
+    <div className={className}>
       {
         contacts.map(({ title, value }, key) => (
           <div className={css.contact} key={key}>

@@ -3,24 +3,8 @@
   position: relative;
 }
 
-.isSmall.container {
-  width: 100%;
-}
-
 .error {
   color: red !important;
-}
-
-.hasValue {
-  .label {
-    transform: translateY(-1.8rem) scale(.6, .6);
-  }
-}
-
-.isSmall.hasValue {
-  .label {
-    transform: translateY(-2rem) scale(.6, .6);
-  }
 }
 
 .active {
@@ -37,12 +21,12 @@
   right: 2.4rem;
   width: 3.2rem;
   height: 3.2rem;
-  top: calc(50% - 1.6rem)
-}
+  top: calc(50% - 1.6rem);
 
-.isSmall .clear {
-  right: .8rem;
-  width: 2.4rem;
+  @include media-mobile {
+    right: .8rem;
+    width: 2.4rem;
+  }
 }
 
 .label {
@@ -54,11 +38,11 @@
   transform-origin: left;
   transition: all 200ms ease-in;
   opacity: .8;
-}
 
-.isSmall .label {
-  left: 1.2rem;
-  font-size: 2rem;
+  @include media-mobile {
+    left: 1.2rem;
+    font-size: 2rem;
+  }
 }
 
 .wrapper {
@@ -73,12 +57,13 @@
   background-color: #F2F2F2;
   border-radius: .4rem;
   border-color: transparent;
+
+  @include media-mobile {
+    padding: 1.8rem 1.2rem 0;
+    font-size: 2rem;
+  }
 }
 
-.isSmall .input {
-  padding: 1.8rem 1.2rem 0;
-  font-size: 2rem;
-}
 
 .prompt {
   color: grey;

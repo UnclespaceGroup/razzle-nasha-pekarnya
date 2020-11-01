@@ -1,4 +1,4 @@
-.isLarge, .isSmall {
+.container {
   border-radius: .8rem;
   overflow: hidden;
 }
@@ -16,10 +16,10 @@
   &:hover {
     background: rgba(0, 0, 0, 0.8);
   }
-}
 
-.isSmall .wrapper {
-  height: 8rem;
+  @include media-mobile {
+    height: 8rem;
+  }
 }
 
 .title {
@@ -27,8 +27,8 @@
   color: white;
   font-weight: bold;
   text-align: center;
-}
 
-.isSmall .title {
-  font-size: 1.8rem;
+  @include media-mobile {
+    font-size: 1.8rem;
+  }
 }

@@ -3,12 +3,10 @@ import PropTypes from 'prop-types'
 import css from 'components/СontentConstructor/blocks/BlockText/blockText.module.scss'
 import ReactMarkdown from 'react-markdown'
 import Container from 'components/Container/Container'
-import useDevice from 'hooks/useDevice'
 
 const BlockText = ({ title, text }) => {
-  const { currentDevice } = useDevice()
   return (
-    <Container className={css[currentDevice]}>
+    <Container>
       <div className={css.block}>
         <div className={css.title}>{title}</div>
         <ReactMarkdown source={text} />

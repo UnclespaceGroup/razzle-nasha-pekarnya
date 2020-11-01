@@ -3,8 +3,8 @@
   font-size: 1.8rem;
   margin-bottom: .8rem;
   opacity: .8;
-}
 
-.isSmall.label {
-  font-size: 1.4rem;
+  @include media-mobile {
+    font-size: 1.4rem;
+  }
 }

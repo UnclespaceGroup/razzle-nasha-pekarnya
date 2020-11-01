@@ -3,21 +3,19 @@
   margin-left: auto;
   margin-top: 2.4rem;
   margin-bottom: 6rem;
+
+  @include media-mobile {
+    width: auto;
+    margin-top: 2.4rem;
+    margin-bottom: 6rem;
+  }
 }
 
 .title {
   text-align: right;
   margin-top: 1.6rem;
-}
 
-.isSmall {
-  .block {
-    width: auto;
-    margin-top: 2.4rem;
-    margin-bottom: 6rem;
-  }
-
-  .title {
+  @include media-mobile {
     text-align: right;
     font-size: 1.4rem;
   }

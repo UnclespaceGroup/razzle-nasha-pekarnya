@@ -50,7 +50,7 @@
   }
 }
 
-.isSmall {
+@include media-mobile {
   :global {
     .swiper-button-next, .swiper-button-prev {
       display: none;

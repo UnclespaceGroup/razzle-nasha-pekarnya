@@ -2,14 +2,12 @@ import React from 'react'
 import cn from 'classnames'
 import PropTypes from 'prop-types'
 import css from './checkBox.module.scss'
-import useDevice from 'hooks/useDevice'
 
 const CheckBox = ({ input, label, meta = {}, prompt }) => {
   const { error, touched } = meta
-  const { currentDevice } = useDevice()
 
   return (
-    <div className={css[currentDevice]}>
+    <div>
       <label className={cn(css.container, (error && touched) && css.hasError)}>
         <input type='checkbox' {...input} />
         <div className={css.label}>{label}</div>

@@ -3,10 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 import _ from 'lodash'
-import useDevice from 'hooks/useDevice'
 import css from './rowCards.module.scss'
-import CardLink from 'components/CardLink/CardLink'
-import { PAGE_PRODUCTS } from 'constants/routes'
 
 const RowCards = ({
   className,
@@ -18,10 +15,8 @@ const RowCards = ({
   cardClassName,
   CardMoreComponent
 }) => {
-  const { currentDevice } = useDevice()
-
   return (
-    <ul className={cn(className, css[currentDevice], css.row)}>
+    <ul className={cn(className, css.row)}>
       {_.map(items || _.times(6, () => {}),
         renderChild || ((item, key) => (
           <li

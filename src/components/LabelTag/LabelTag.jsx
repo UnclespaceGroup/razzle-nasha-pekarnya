@@ -2,16 +2,13 @@
 import React from 'react'
 import cn from 'classnames'
 import PropTypes from 'prop-types'
-import css from 'components/LabelTag/labelTag.module.scss'
-import useDevice from 'hooks/useDevice'
+import css from './labelTag.module.scss'
 
 const LabelTag = ({ className, title, color }) => {
-  const { currentDevice } = useDevice()
-
   return (
     <div
       style={{ backgroundColor: color }}
-      className={cn(className, css.tag, css[currentDevice])}
+      className={cn(className, css.tag)}
     >
       {title}
     </div>

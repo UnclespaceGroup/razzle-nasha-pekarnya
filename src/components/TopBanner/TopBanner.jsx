@@ -1,6 +1,5 @@
 // packages
 import React from 'react'
-import useDevice from 'hooks/useDevice'
 import cn from 'classnames'
 import css from './topBanner.module.scss'
 import Container from 'components/Container/Container'
@@ -10,10 +9,8 @@ import { MdKeyboardArrowRight } from 'react-icons/md'
 import { PAGE_PRODUCTS } from 'constants/routes'
 
 const TopBanner = ({ title, text, img }) => {
-  const { currentDevice } = useDevice()
-
   return (
-    <div className={cn(css[currentDevice], css.container)}>
+    <div className={cn(css.container)}>
       <Container>
         <div className={css.wrapper}>
           <div>

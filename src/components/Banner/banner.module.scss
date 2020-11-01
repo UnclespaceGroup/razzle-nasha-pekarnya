@@ -1,32 +1,30 @@
 
 .background {
   background-color: $colorBrown;
-}
 
-.isLarge {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 12rem 0;
   min-height: 48rem;
-}
 
-.isSmall {
-  position: relative;
-  height: auto;
-  padding: 6.4rem 0;
-  min-height: 32rem;
+  @include media-mobile {
+    position: relative;
+    height: auto;
+    padding: 6.4rem 0;
+    min-height: 32rem;
+  }
 }
 
 .wrapper {
   width: 64rem;
-}
 
-.isSmall .wrapper {
-  width: 100%;
-  position: relative;
-  z-index: 12;
+  @include media-mobile {
+    width: 100%;
+    position: relative;
+    z-index: 12;
+  }
 }
 
 .title {
@@ -34,20 +32,20 @@
   font-weight: 500;
   margin-bottom: 2.4rem;
   color: white;
-}
 
-.isSmall .title {
-  font-size: 2.4rem;
-  margin-bottom: 1.2rem;
+  @include media-mobile {
+    font-size: 2.4rem;
+    margin-bottom: 1.2rem;
+  }
 }
 
 .text {
   font-size: 2.4rem;
   color: white;
-}
 
-.isSmall .text {
-  font-size: 1.6rem;
+  @include media-mobile {
+    font-size: 1.6rem;
+  }
 }
 
 .side {
@@ -57,10 +55,10 @@
   top: 0;
   bottom: 0;
   width: 50%;
-}
 
-.isSmall .side {
-  width: 100%;
+  @include media-mobile {
+    width: 100%;
+  }
 }
 
 .img {
@@ -78,10 +76,11 @@
     height: 100%;
     background: $gradientBrown;
   }
-}
 
-.isSmall .img {
-  &:before {
-    background: $gradientBrown;
+  @include media-mobile {
+    &:before {
+      background: $gradientBrown;
+    }
   }
 }
+

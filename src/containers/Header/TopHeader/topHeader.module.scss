@@ -33,6 +33,10 @@
   line-height: 1.6rem;
   font-weight: 500;
   margin-left: 2.4rem;
+
+  @include media-mobile {
+    display: none;
+  }
 }
 
 .burger {
@@ -59,6 +63,10 @@
   font-weight: bold;
   display: flex;
   align-items: center;
+
+  @include media-mobile {
+    display: none;
+  }
 }
 
 .left {

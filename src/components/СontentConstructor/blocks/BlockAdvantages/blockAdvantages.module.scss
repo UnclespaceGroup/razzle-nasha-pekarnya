@@ -1,41 +1,36 @@
 .container {
   padding: 5.6rem 16rem 12rem;
   justify-content: space-between;
+
+  @include media-mobile {
+    padding: 0;
+  }
 }
 
 .img {
   width: 100%;
   height: 17.8rem;
   background-size: contain;
+
+  @include media-mobile {
+    height: 8rem;
+    background-position: left;
+  }
 }
 
 .title {
   font-size: 2.4rem;
   text-align: center;
   margin-top: 1.6rem;
-}
 
-.card {
-}
-
-.isSmall {
-  .container {
-    padding: 0;
-  }
-
-  .img {
-    width: 100%;
-    height: 8rem;
-    background-position: left;
-    background-size: contain;
-  }
-
-  .title {
+  @include media-mobile {
     font-size: 2rem;
     text-align: left;
   }
+}
 
-  .card {
+.card {
+  @include media-mobile {
     &:nth-child(n + 1) {
       margin-top: 3.6rem;
     }
