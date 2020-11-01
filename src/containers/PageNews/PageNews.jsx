@@ -1,21 +1,22 @@
 // packages
 import React from 'react'
+// styles
 import css from './pageNews.module.scss'
+// components
 import News from 'containers/News/News'
-import useDevice from 'hooks/useDevice'
 import Header from 'containers/Header/Header'
 import Bg from 'components/Bg/Bg'
 import Title from 'components/Title/Title'
 import Container from 'components/Container/Container'
-import useMeta from 'api/hooks/useMeta'
 import Helmet from 'components/Helmet/Helmet'
+// hooks
+import useMeta from 'api/hooks/useMeta'
 
 const PageNews = () => {
-  const { currentDevice } = useDevice()
   const { news: newsMeta } = useMeta()
 
   return (
-    <Bg color='grey' className={css[currentDevice]}>
+    <Bg color='grey' className={css.container}>
       <Helmet {...newsMeta} />
       <Header />
       <Container>

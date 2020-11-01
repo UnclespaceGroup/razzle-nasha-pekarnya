@@ -1,10 +1,10 @@
-.isLarge {
+.container {
   padding-bottom: 12rem;
   padding-top: 6rem;
-}
 
-.isSmall {
-  padding-top: 4.8rem;
-  padding-bottom: 12rem;
-  min-height: 100vh;
+  @include media-mobile {
+    padding-top: 4.8rem;
+    padding-bottom: 12rem;
+    min-height: 100vh;
+  }
 }

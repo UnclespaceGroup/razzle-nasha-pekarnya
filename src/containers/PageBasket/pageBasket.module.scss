@@ -3,6 +3,11 @@
   margin-top: 4rem;
   min-height: 100vh;
   width: 94rem;
+
+  @include media-mobile {
+    @include container-m;
+    margin-top: 2.4rem;
+  }
 }
 
 .header {
@@ -13,6 +18,11 @@
   margin-top: 2.4rem;
   font-size: 3.6rem;
   font-weight: 500;
+
+  @include media-mobile {
+    font-size: 2.4rem;
+    margin-top: 1.2rem;
+  }
 }
 
 .close {
@@ -32,6 +42,11 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  @include media-mobile {
+    display: block;
+    padding: 3.2rem 0;
+  }
 }
 
 .price {
@@ -39,6 +54,10 @@
   font-size: 2.4rem;
   font-weight: bold;
   margin-right: 2.4rem;
+
+  @include media-mobile {
+    margin-bottom: 2.4rem;
+  }
 }
 
 .footerTitle {
@@ -46,46 +65,8 @@
   font-weight: bold;
   width: 40%;
   margin-right: auto;
-}
 
-.isSmall {
-  .container {
-    @include container-m;
-    margin-top: 2.4rem;
-  }
-
-  .header {
-    margin-bottom: 4.2rem;
-  }
-
-  .mainTitle {
-    font-size: 2.4rem;
-    margin-top: 1.2rem;
-  }
-
-  .card {
-    margin-bottom: .8rem;
-  }
-
-  .priceBig {
-    font-weight: 500;
-    margin-bottom: 1.6rem;
-  }
-
-  .btn {
-    width: 25.8rem;
-  }
-
-  .footer {
-    display: block;
-    padding: 3.2rem 0;
-  }
-
-  .footerTitle {
+  @include media-mobile {
     width: 100%;
-  }
-
-  .price {
-    margin-bottom: 2.4rem;
   }
 }

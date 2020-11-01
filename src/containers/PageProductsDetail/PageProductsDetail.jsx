@@ -1,30 +1,33 @@
 // packages
 import React, { useCallback, useMemo } from 'react'
-import css from './pageProductsDetail.module.scss'
-import useDevice from 'hooks/useDevice'
 import { Redirect, useParams } from 'react-router-dom'
 import _ from 'lodash'
+import { FiPlus } from 'react-icons/fi'
 import { useRemoteData } from '@aic/react-remote-data-provider'
-import FETCH_PRODUCTS_DETAIL from 'api/fetch/FETCH_PRODUCTS_DETAIL'
+// components
 import Header from 'containers/Header/Header'
 import Container from 'components/Container/Container'
 import SliderPhoto from 'components/SliderPhoto/SliderPhoto'
 import BackLink from 'components/BackLink/BackLink'
 import Button from 'components/Button/Button'
 import Picker from 'components/Picker/Picker'
-import { FiPlus } from 'react-icons/fi'
 import ContactsBlock from 'components/ContactsBlock/ContactsBlock'
+// hooks
 import useProducts from 'hooks/useProducts'
+// constants
 import { PAGE_404 } from 'constants/routes'
-import { getDiscountPrice } from 'utils/priceUtils'
 import Helmet from 'components/Helmet/Helmet'
+import FETCH_PRODUCTS_DETAIL from 'api/fetch/FETCH_PRODUCTS_DETAIL'
+// utils
+import { getDiscountPrice } from 'utils/priceUtils'
+// styles
+import css from './pageProductsDetail.module.scss'
 
 const PageProductsDetail = () => {
   const { slug } = useParams()
   const {
     response: {
       title,
-      img,
       images,
       price,
       text,
@@ -34,8 +37,6 @@ const PageProductsDetail = () => {
       isNotFound
     } = {}
   } = useRemoteData(FETCH_PRODUCTS_DETAIL(slug), [])
-
-  const { currentDevice, isSmall } = useDevice()
 
   const { addBasket, cards } = useProducts()
 
@@ -57,7 +58,7 @@ const PageProductsDetail = () => {
   }
 
   return (
-    <div className={css[currentDevice]}>
+    <div>
       <Helmet {...helmetData} />
       <Header />
       <Container className={css.row}>
@@ -93,7 +94,7 @@ const PageProductsDetail = () => {
                       onClick={btnAddClick}
                       className={css.btnBasket}
                     >
-                      {!isSmall && <FiPlus />}
+                      <FiPlus className={css.plusIcon} />
                       <span>В корзину</span>
                     </Button>
                   )

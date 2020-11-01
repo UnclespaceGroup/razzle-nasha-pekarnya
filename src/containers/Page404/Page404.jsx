@@ -1,17 +1,15 @@
 // packages
 import React from 'react'
-import useDevice from 'hooks/useDevice'
 import css from './page404.module.scss'
+// components
 import Container from 'components/Container/Container'
 import Header from 'containers/Header/Header'
 
 const Page404 = () => {
-  const { currentDevice } = useDevice()
-
   return (
     <>
       <Header />
-      <Container className={css[currentDevice]}>
+      <Container className={css.container}>
         <div className={css.code}>
         404
         </div>

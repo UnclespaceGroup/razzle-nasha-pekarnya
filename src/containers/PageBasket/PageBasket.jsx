@@ -12,13 +12,11 @@ import BackLink from 'components/BackLink/BackLink'
 import Container from 'components/Container/Container'
 import CardBasket from 'components/CardBasket/CardBasket'
 import EmptyBasket from 'components/EmptyBasket/EmptyBasket'
-import useDevice from 'hooks/useDevice'
 import css from './pageBasket.module.scss'
 import useMeta from 'api/hooks/useMeta'
 import Helmet from 'components/Helmet/Helmet'
 
 const PageBasket = () => {
-  const { currentDevice } = useDevice()
   const { cards } = useProducts()
   const basket = useSelector(state => state.basket)
   const price = useMemo(() => getFullPrice(basket), [basket])
@@ -30,7 +28,7 @@ const PageBasket = () => {
   const { basket: basketMeta } = useMeta()
 
   return (
-    <Bg color='grey' className={css[currentDevice]}>
+    <Bg color='grey'>
       <Helmet {...basketMeta} />
       <Header />
       <Container className={css.container}>

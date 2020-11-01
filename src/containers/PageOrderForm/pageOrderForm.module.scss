@@ -3,11 +3,11 @@
   width: 108rem;
   margin-bottom: 6.4rem;
   padding-top: 2.4rem;
-}
 
-.isSmall .container {
-  @include container-m;
-  padding-bottom: 6.4rem;
+  @include media-mobile {
+    @include container-m;
+    padding-bottom: 6.4rem;
+  }
 }
 
 $fieldWidth: 33.33%;
@@ -17,21 +17,22 @@ $bigFieldWidth: 66.66%;
   font-size: 4.8rem;
   margin-top: 2.4rem;
   margin-bottom: 4.8rem;
-}
 
-.isSmall .title {
-  font-size: 3.2rem;
-  margin-bottom: 3.2rem;
+  @include media-mobile {
+    font-size: 3.2rem;
+    margin-bottom: 3.2rem;
+  }
 }
 
 .fieldName {
   margin-bottom: 4.8rem;
   width: $bigFieldWidth;
+
+  @include media-mobile {
+    width: 100%;
+  }
 }
 
-.isSmall .fieldName {
-  width: 100%;
-}
 
 .subtitle {
   margin-bottom: 3rem;
@@ -42,30 +43,32 @@ $bigFieldWidth: 66.66%;
   display: flex;
   flex-wrap: wrap;
   margin: 0 -.8rem;
-}
 
-.isSmall .rowFields {
-  margin: 0;
-  display: block;
+  @include media-mobile {
+    margin: 0;
+    display: block;
+  }
 }
 
 .bigField {
   width: $bigFieldWidth;
   padding: 0 .8rem 3.2rem;
-}
 
-.field {
-  width: $fieldWidth;
-  padding: 0 .8rem 3.2rem;
-}
-
-.isSmall {
-  .field, .bigField {
+  @include media-mobile {
     width: 100%;
     padding: 0 0 2.4rem;
   }
 }
 
+.field {
+  width: $fieldWidth;
+  padding: 0 .8rem 3.2rem;
+
+  @include media-mobile {
+    width: 100%;
+    padding: 0 0 2.4rem;
+  }
+}
 
 .textArea {
   margin-top: 2.4rem;
@@ -81,21 +84,22 @@ $bigFieldWidth: 66.66%;
   font-size: 3.6rem;
   margin-left: 4.2rem;
   font-weight: bold;
+
+  @include media-mobile {
+    margin-bottom: 2.4rem;
+  }
 }
 
-.isSmall .price {
-  margin-bottom: 2.4rem;
-}
 
 .footer {
   margin-top: 6.4rem;
   display: flex;
   align-items: center;
-}
 
-.isSmall .footer {
-  align-items: flex-end;
-  flex-direction: column-reverse;
+  @include media-mobile {
+    align-items: flex-end;
+    flex-direction: column-reverse;
+  }
 }
 
 .error {

@@ -1,31 +1,32 @@
 // packages
 import React from 'react'
+import { Field, Form } from 'react-final-form'
+// styles
 import css from './pageOrderForm.module.scss'
-import usePageOrderForm from 'containers/PageOrderForm/usePageOrderForm'
+// hooks
+import usePageOrderForm from './usePageOrderForm'
+import useMeta from 'api/hooks/useMeta'
+// components
 import Header from 'containers/Header/Header'
 import Container from 'components/Container/Container'
 import Input from 'components/Input/Input'
 import BackLink from 'components/BackLink/BackLink'
-import { Field, Form } from 'react-final-form'
 import Button from 'components/Button/Button'
 import Attention from 'components/Attention/Attention'
 import CheckBox from 'components/CheckBox/CheckBox'
 import TextArea from 'components/TextArea/TextArea'
-import useDevice from 'hooks/useDevice'
-import useMeta from 'api/hooks/useMeta'
 import Helmet from 'components/Helmet/Helmet'
 
 const PageOrderForm = () => {
   const { form: formMeta } = useMeta()
   const { onSubmit, formData, price } = usePageOrderForm()
-  const { currentDevice } = useDevice()
 
   return (
     <Form
       onSubmit={onSubmit}
       name='order-form'
       render={({ handleSubmit, submitFailed, valid, ...props }) => (
-        <div className={css[currentDevice]}>
+        <div>
           <Header />
           <Helmet {...formMeta} />
           <Container className={css.container}>

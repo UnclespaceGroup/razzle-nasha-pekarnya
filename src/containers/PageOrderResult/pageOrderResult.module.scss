@@ -6,12 +6,12 @@
   min-height: 60rem;
   width: 92rem;
   padding: 7rem 12rem 10rem;
-}
 
-.isSmall .container {
-  min-height: 30rem;
-  width: 100%;
-  padding: 2rem 1.2rem 4rem;
+  @include media-mobile {
+    min-height: 30rem;
+    width: 100%;
+    padding: 2rem 1.2rem 4rem;
+  }
 }
 
 .check {
@@ -19,11 +19,11 @@
   width: 10rem;
   height: 10rem;
   margin: 0 auto;
-}
 
-.isSmall .check {
-  width: 8rem;
-  height: 8rem;
+  @include media-mobile {
+    width: 8rem;
+    height: 8rem;
+  }
 }
 
 .title {
@@ -31,11 +31,11 @@
   font-weight: 500;
   margin: 2.4rem 0 5.2rem;
   text-align: center;
-}
 
-.isSmall .title {
-  font-size: 2.4rem;
-  margin: 1.6rem 0 4rem;
+  @include media-mobile {
+    font-size: 2.4rem;
+    margin: 1.6rem 0 4rem;
+  }
 }
 
 .footer {
@@ -45,32 +45,32 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-}
 
-.isSmall .footer {
-  display: block;
-  padding-top: 1.6rem;
-  margin-top: 6rem;
+  @include media-mobile {
+    display: block;
+    padding-top: 1.6rem;
+    margin-top: 6rem;
+  }
 }
 
 .homeBtn {
   display: flex;
   justify-content: center;
   padding: 6.4rem 0 12rem;
-}
 
-.isSmall .homeBtn {
-  padding: 4rem 2rem 8rem;
+  @include media-mobile {
+    padding: 4rem 2rem 8rem;
+  }
 }
 
 .price {
   width: 40%;
   margin-right: auto;
-}
 
-.isSmall .price {
-  width: 100%;
-  margin-bottom: 2.4rem;
+  @include media-mobile {
+    width: 100%;
+    margin-bottom: 2.4rem;
+  }
 }
 
 .btnPrinter {
@@ -83,10 +83,10 @@
   svg {
     margin: 0!important;
   }
-}
 
-.isSmall .btnPrinter {
-  width: 6.4rem;
+  @include media-mobile {
+    width: 6.4rem;
+  }
 }
 
 .btns {
@@ -94,6 +94,8 @@
   justify-content: space-between;
 }
 
-.isSmall .btnCheck {
-  width: 74% !important;
+@include media-mobile {
+  .btnCheck {
+    width: 74% !important;
+  }
 }
