@@ -1,4 +1,3 @@
-@import "styles/_variables";
 
 .container {
   position: fixed;
@@ -15,18 +14,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
 
-.isSmall .wrapper {
-  height: 4.6rem;
+  @include media-mobile {
+    height: 4.6rem;
+  }
 }
 
 .back {
   height: 7.6rem;
-}
 
-.isSmall.back {
-  height: 4.6rem;
+  @include media-mobile {
+    height: 4.6rem;
+  }
 }
 
 .text {
@@ -40,19 +39,18 @@
   width: 3.6rem;
   height: 3.6rem;
   color: $colorBrown;
-}
 
-.isSmall .burger {
-  width: 2.4rem;
-  height: 2.4rem;
+  @include media-mobile {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
 }
 
 .logo {
   height: 4rem;
-}
-
-.isSmall .logo {
-  height: 2rem;
+  @include media-mobile {
+    height: 2rem;
+  }
 }
 
 .phone {
@@ -68,6 +66,10 @@
   justify-content: flex-start;
   align-items: center;
   width: 40%;
+
+  @include media-mobile {
+    width: auto;
+  }
 }
 
 .right {
@@ -75,10 +77,10 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-}
 
-.isSmall .left, .isSmall .right {
-  width: auto;
+  @include media-mobile {
+    width: auto;
+  }
 }
 
 .btnBasket {
@@ -88,10 +90,10 @@
   padding: 0 2.4rem;
   width: 20rem;
   height: 5.4rem !important;
-}
 
-.isSmall .btnBasket {
-  width: 10rem;
-  font-size: 1.6rem;
-  height: 3rem!important;
+  @include media-mobile {
+    width: 10rem;
+    font-size: 1.6rem;
+    height: 3rem!important;
+  }
 }

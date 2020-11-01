@@ -1,18 +1,19 @@
 // packages
 import React from 'react'
 import _ from 'lodash'
-import BgImage from 'components/BgImage/BgImage'
-import css from './footer.module.scss'
-import Container from 'components/Container/Container'
-import useDevice from 'hooks/useDevice'
-import { items } from 'constants/navigation'
-import { Link } from 'react-router-dom'
-import { useRemoteData } from '@aic/react-remote-data-provider'
-import FETCH_CONTACTS from 'api/fetch/FETCH_CONTACTS'
 import { MdLocationOn, MdMail } from 'react-icons/md'
+import { useRemoteData } from '@aic/react-remote-data-provider'
+import { Link } from 'react-router-dom'
+// components
+import BgImage from 'components/BgImage/BgImage'
+import Container from 'components/Container/Container'
+import FETCH_CONTACTS from 'api/fetch/FETCH_CONTACTS'
+// styles
+import css from './footer.module.scss'
+// constants
+import { items } from 'constants/navigation'
 
 const Footer = () => {
-  const { currentDevice } = useDevice()
   const {
     response: {
       phone,
@@ -22,7 +23,7 @@ const Footer = () => {
   } = useRemoteData(FETCH_CONTACTS)
 
   return (
-    <footer className={css[currentDevice]}>
+    <footer>
       <BgImage local img='/api/footer-image.jpg'>
         <div className={css.wrapper}>
           <Container>

@@ -11,12 +11,12 @@
   white-space: nowrap;
   overflow: auto;
   border-bottom: solid 1px darkgrey;
-}
 
-.isSmall .wrapper {
-  margin: 0;
-  width: 100%;
-  padding: 0 1.6rem;
+  @include media-mobile {
+    margin: 0;
+    width: 100%;
+    padding: 0 1.6rem;
+  }
 }
 
 .item {
@@ -29,13 +29,18 @@
   &:hover {
     opacity: .8;
   }
+
+  @include media-mobile {
+    padding: 1.6rem 0;
+  }
 }
 
-.isSmall .item {
-  padding: 1.6rem 0;
-}
 .img {
   position: absolute;
   width: 7.2rem;
   right: 0;
+
+  @include media-mobile {
+    display: none;
+  }
 }

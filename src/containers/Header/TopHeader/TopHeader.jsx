@@ -1,20 +1,19 @@
 // packages
 import React from 'react'
 import PropTypes from 'prop-types'
-import css from './topHeader.module.scss'
+import { Link } from 'react-router-dom'
+import { useRemoteData } from '@aic/react-remote-data-provider'
+import { MdShoppingBasket, MdMenu } from 'react-icons/md'
+// components
 import Container from 'components/Container/Container'
 import DesktopOnly from 'utils/DesktopOnly'
 import Button from 'components/Button/Button'
-import cn from 'classnames'
-import useDevice from 'hooks/useDevice'
+// constants
 import { PAGE_BASKET, PAGE_HOME } from 'constants/routes'
-import { Link } from 'react-router-dom'
-import { useRemoteData } from '@aic/react-remote-data-provider'
 import FETCH_CONTACTS from 'api/fetch/FETCH_CONTACTS'
-import { MdShoppingBasket, MdMenu } from 'react-icons/md'
+import css from './topHeader.module.scss'
 
 const TopHeader = ({ clickOpen, price }) => {
-  const { currentDevice } = useDevice()
   const {
     response: {
       phone
@@ -22,7 +21,7 @@ const TopHeader = ({ clickOpen, price }) => {
   } = useRemoteData(FETCH_CONTACTS)
 
   return (
-    <header className={cn(css.back, css[currentDevice])}>
+    <header className={css.back}>
       <nav className={css.container}>
         <Container className={css.wrapper}>
           <div className={css.left}>

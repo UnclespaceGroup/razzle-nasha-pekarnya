@@ -3,16 +3,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
 import cn from 'classnames'
-import { items } from 'constants/navigation'
-import { Link } from 'react-router-dom'
-import css from './sideHeader.module.scss'
-import useDevice from 'hooks/useDevice'
-import { MdClose, MdPhone } from 'react-icons/md'
 import { useRemoteData } from '@aic/react-remote-data-provider'
+import { Link } from 'react-router-dom'
+import { MdClose, MdPhone } from 'react-icons/md'
+// styles
+import css from './sideHeader.module.scss'
+// constants
 import FETCH_CONTACTS from 'api/fetch/FETCH_CONTACTS'
+import { items } from 'constants/navigation'
 
 const SideHeader = ({ isOpen, onClose }) => {
-  const { currentDevice } = useDevice()
   const {
     response: {
       phone
@@ -21,7 +21,7 @@ const SideHeader = ({ isOpen, onClose }) => {
 
   return (
     <div
-      className={cn(css[currentDevice], css.container, isOpen && css.isOpen)}
+      className={cn(css.container, isOpen && css.isOpen)}
     >
       <div
         className={css.wrapper}

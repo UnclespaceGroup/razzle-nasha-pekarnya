@@ -1,20 +1,14 @@
-@import "styles/_variables";
-
 .wrapper {
   min-height: 100vh;
   padding-bottom: 12rem;
 }
 
-.isSmall.wrapper {
-
-}
-
 .products {
   margin: 12rem auto 3.2rem;
-}
 
-.isSmall .products {
-  margin: 6rem auto 2rem;
+  @include media-mobile {
+    margin: 6rem auto 2rem;
+  }
 }
 
 .moreBtn {

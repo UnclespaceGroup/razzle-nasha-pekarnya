@@ -1,24 +1,21 @@
 // packages
 import React from 'react'
-import css from './categories.module.scss'
 import { useRemoteData } from '@aic/react-remote-data-provider'
-import FETCH_CATEGORIES from 'api/fetch/FETCH_CATEGORIES'
 import _ from 'lodash'
-import Container from 'components/Container/Container'
 import { scrollWindowTo } from 'utils/scrollWindowTo'
+import FETCH_CATEGORIES from 'api/fetch/FETCH_CATEGORIES'
+import Container from 'components/Container/Container'
 import { getCategoryBlockId } from 'utils/getCategoryBlockId'
-import useDevice from 'hooks/useDevice'
-import cn from 'classnames'
+// styles
+import css from './categories.module.scss'
 
 const Categories = () => {
   const {
     response: items
   } = useRemoteData(FETCH_CATEGORIES)
 
-  const { currentDevice, isLarge } = useDevice()
-
   return (
-    <div className={cn(css.container, css[currentDevice])}>
+    <div className={css.container}>
       <Container className={css.wrapper}>
         {_.map(items, ({ title, id }, key) => (
           <button
@@ -29,7 +26,7 @@ const Categories = () => {
             {title}
           </button>
         ))}
-        {isLarge && <img className={css.img} src='/images/logo-full-gray.png' alt='' />}
+        <img className={css.img} src='/images/logo-full-gray.png' alt='' />
       </Container>
     </div>
   )
