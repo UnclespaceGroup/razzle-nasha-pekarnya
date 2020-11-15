@@ -37,7 +37,7 @@ const BannerSlider = ({ items }) => {
               <div className={css.wrapper}>
                 <h2 className={css.title}>{title}</h2>
                 <div className={css.text}>{text}</div>
-                {link && <Button variant='yellow' className={css.btn} to={link}>Подробнее</Button>}
+                {!!link && <Button variant='yellow' className={css.btn} to={link}>Подробнее</Button>}
               </div>
             </Container>
             <BgImage className={css.img} img={img} />
