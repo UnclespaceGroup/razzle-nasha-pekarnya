@@ -7,6 +7,21 @@ import { useHistory } from 'react-router'
 import { PAGE_ORDER_RESULT } from 'constants/ROUTES'
 import { botUrl } from 'api/axios/instance'
 
+const regionsOptions = [
+  {
+    value: 'В пределах города',
+    label: 'В пределах города'
+  },
+  {
+    value: 'Чов',
+    label: 'Чов'
+  },
+  {
+    value: 'Эжва',
+    label: 'Эжва'
+  }
+]
+
 const usePageOrderForm = () => {
   const history = useHistory()
   const formData = {
@@ -15,6 +30,11 @@ const usePageOrderForm = () => {
       label: 'Ваше имя',
       placeholder: 'Иван Петров',
       validate: required
+    },
+    region: {
+      name: 'region',
+      label: 'Район',
+      options: regionsOptions
     },
     street: {
       name: 'street',

@@ -16,6 +16,7 @@ import Attention from 'components/Attention/Attention'
 import CheckBox from 'components/CheckBox/CheckBox'
 import TextArea from 'components/TextArea/TextArea'
 import Helmet from 'components/Helmet/Helmet'
+import Select from 'components/Select/Select'
 
 const PageOrderForm = () => {
   const { form: formMeta } = useMeta()
@@ -24,8 +25,10 @@ const PageOrderForm = () => {
   return (
     <Form
       onSubmit={onSubmit}
-      name='order-form'
-      render={({ handleSubmit, submitFailed, valid, ...props }) => (
+      initialValues={{
+        region: 'В пределах города'
+      }}
+      render={({ handleSubmit, submitFailed, valid }) => (
         <div>
           <Header />
           <Helmet {...formMeta} />
@@ -40,6 +43,12 @@ const PageOrderForm = () => {
             </div>
             <div className={css.subtitle}>Адрес доставки</div>
             <ul className={css.rowFields}>
+              <li className={css.bigField}>
+                <Field
+                  {...formData.region}
+                  component={Select}
+                />
+              </li>
               <li className={css.bigField}>
                 <Field
                   component={Input}

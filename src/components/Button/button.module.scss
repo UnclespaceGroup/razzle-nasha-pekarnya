@@ -52,6 +52,10 @@
 .black {
   background-color: #4F4F4F!important;
   color: white!important;
+
+  &:hover {
+    background-color: #FF8C4A!important;
+  }
 }
 
 .orange {

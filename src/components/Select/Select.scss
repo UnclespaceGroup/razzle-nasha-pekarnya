@@ -1,0 +1,24 @@
+
+.react-select__control {
+  height: 6.4rem!important;
+  padding: 0 1.6rem!important;
+  font-size: 2.4rem!important;
+  width: 100%!important;
+  background-color: #F2F2F2!important;
+  border-radius: .4rem!important;
+  border: none!important;
+
+  @include media-mobile {
+    padding: 0 1.2rem!important;
+    height: 5.4rem!important;
+    font-size: 2rem!important;
+  }
+
+  &--is-focused {
+    box-shadow: 0 0 1px 1px gray!important;
+  }
+}
+
+.react-select__indicator-separator {
+  display: none!important;
+}
