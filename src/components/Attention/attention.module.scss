@@ -1,9 +1,6 @@
 .container {
-  height: 4.8rem;
   width: 64rem;
   font-size: 1.8rem;
-  display: flex;
-  align-items: center;
   padding: 1rem 2.4rem;
   margin: 2rem 0;
   border-radius: .4rem;
@@ -13,6 +10,11 @@
     height: auto;
     padding: 1.2rem;
     font-size: 1.4rem;
+  }
+
+  b {
+    display: block;
+    margin-bottom: .8rem;
   }
 }
 

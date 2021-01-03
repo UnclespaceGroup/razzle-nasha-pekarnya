@@ -17,6 +17,10 @@
     background-color: #e37e21;
   }
 
+  &:disabled {
+    opacity: .7;
+  }
+
   svg {
     width: 3.2rem;
     height: 3.2rem;

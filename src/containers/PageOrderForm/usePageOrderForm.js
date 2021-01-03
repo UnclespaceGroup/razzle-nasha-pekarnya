@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { getFullPrice } from 'utils/priceUtils'
 import axios from 'axios'
@@ -6,6 +6,7 @@ import { composeValidators, maxValue, minValue, required } from 'utils/validator
 import { useHistory } from 'react-router'
 import { PAGE_ORDER_RESULT } from 'constants/ROUTES'
 import { botUrl } from 'api/axios/instance'
+import { FORM_ERROR } from 'final-form'
 
 const regionsOptions = [
   {
@@ -74,7 +75,7 @@ const usePageOrderForm = () => {
     },
     agree: {
       name: 'agree',
-      label: 'Я согласен передавать свои данные и бла бла бла',
+      label: 'Я согласен с политикой конфиденциальности',
       validate: required
     },
     textarea: {
@@ -88,27 +89,25 @@ const usePageOrderForm = () => {
 
   const price = useMemo(() => getFullPrice(basket), [basket])
 
-  const onSubmit = data => {
-    const orders = Object.values(basket)
+  const onSubmit = useCallback(async userData => {
+    try {
+      const orders = Object.values(basket)
 
-    axios.post(botUrl, {
-      orders,
-      userData: data,
-      price
-    })
-      .then(res => {
-        const {
-          error
-        } = res?.data || {}
-        if (!error) {
-          history.push(PAGE_ORDER_RESULT, { orders, price, data })
-        }
+      await axios.post(botUrl, {
+        orders,
+        userData,
+        price
       })
-      .catch(e => {
-        console.log(e)
-        alert('Что то пошло не так')
+
+      history.push(PAGE_ORDER_RESULT, {
+        orders,
+        price,
+        data: userData
       })
-  }
+    } catch (e) {
+      return { [FORM_ERROR]: 'error' }
+    }
+  }, [])
 
   return {
     formData,

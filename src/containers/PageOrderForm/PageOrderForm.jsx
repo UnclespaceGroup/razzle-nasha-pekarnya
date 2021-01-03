@@ -28,8 +28,12 @@ const PageOrderForm = () => {
       initialValues={{
         region: 'В пределах города'
       }}
-      render={({ handleSubmit, submitFailed, valid }) => (
-        <div>
+      render={({
+        handleSubmit,
+        submitFailed,
+        submitting
+      }) => (
+        <form onSubmit={handleSubmit}>
           <Header />
           <Helmet {...formMeta} />
           <Container className={css.container}>
@@ -87,16 +91,26 @@ const PageOrderForm = () => {
             />
             <Field component={CheckBox} {...formData.agree} />
             <div className={css.footer}>
-              <Button height={64} variant='black' type='submit' onClick={handleSubmit}>
-                Заказать
+              <Button
+                height={64}
+                variant='black'
+                type='submit'
+                disabled={submitting}
+              >
+                {submitting ? 'Отправка...' : 'Заказать'}
               </Button>
               <span className={css.price}>{price}.00 р</span>
             </div>
-            {(submitFailed && !valid) && <Attention text='Заполните обязательные формы' variant='danger' />}
+            {submitFailed &&
+              <Attention
+                text='Попробуйте попытку позже'
+                title={'Что то пошло не так :\'('}
+                variant='danger'
+              />}
           </Container>
-        </div>
+        </form>
       )}
     />
   )
 }
-export default React.memo(PageOrderForm)
+export default PageOrderForm
