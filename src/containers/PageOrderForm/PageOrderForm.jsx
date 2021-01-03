@@ -17,10 +17,11 @@ import CheckBox from 'components/CheckBox/CheckBox'
 import TextArea from 'components/TextArea/TextArea'
 import Helmet from 'components/Helmet/Helmet'
 import Select from 'components/Select/Select'
+import { fields } from 'containers/PageOrderForm/fields'
 
 const PageOrderForm = () => {
   const { form: formMeta } = useMeta()
-  const { onSubmit, formData, price } = usePageOrderForm()
+  const { onSubmit, price } = usePageOrderForm()
 
   return (
     <Form
@@ -42,54 +43,54 @@ const PageOrderForm = () => {
             <div className={css.fieldName}>
               <Field
                 component={Input}
-                {...formData.name}
+                {...fields.name}
               />
             </div>
             <div className={css.subtitle}>Адрес доставки</div>
             <ul className={css.rowFields}>
               <li className={css.bigField}>
                 <Field
-                  {...formData.region}
+                  {...fields.region}
                   component={Select}
                 />
               </li>
               <li className={css.bigField}>
                 <Field
                   component={Input}
-                  {...formData.street}
+                  {...fields.street}
                 />
               </li>
               <li className={css.field}>
                 <Field
                   component={Input}
-                  {...formData.house}
+                  {...fields.house}
                 />
               </li>
               <li className={css.field}>
                 <Field
                   component={Input}
-                  {...formData.frontDoor}
+                  {...fields.frontDoor}
                 />
               </li>
               <li className={css.field}>
                 <Field
                   component={Input}
-                  {...formData.floor}
+                  {...fields.floor}
                 />
               </li>
               <li className={css.field}>
                 <Field
                   component={Input}
-                  {...formData.flat}
+                  {...fields.flat}
                 />
               </li>
             </ul>
             <Field
               className={css.textArea}
               component={TextArea}
-              {...formData.textarea}
+              {...fields.textarea}
             />
-            <Field component={CheckBox} {...formData.agree} />
+            <Field component={CheckBox} {...fields.agree} />
             <div className={css.footer}>
               <Button
                 height={64}

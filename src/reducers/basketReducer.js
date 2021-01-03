@@ -32,9 +32,12 @@ export default function BasketReducer (state = initialState, action) {
     case 'REMOVE': {
       const _state = Object.assign({}, state)
       delete _state[action.payload]
-      console.log(_state)
       sessionStorage.setItem(PURCHASES, JSON.stringify(_state))
       return _state
+    }
+
+    case 'CLEAR': {
+      return {}
     }
 
     default:
