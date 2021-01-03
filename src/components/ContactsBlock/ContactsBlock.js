@@ -1,38 +1,20 @@
 import React from 'react'
 import css from './contactsBlock.module.scss'
+import _ from 'lodash'
 import cn from 'classnames'
 import PropTypes from 'prop-types'
-
-const contacts = [
-  {
-    title: 'Способ оплаты',
-    value: 'Картой, онлайн'
-  },
-  {
-    title: 'Время приема заказов',
-    value: 'С 10:00 до 22:44'
-  },
-  {
-    title: 'Рабочие дни',
-    value: 'Пн, вт, ср, чт, пт, сб, вс'
-  },
-  {
-    title: 'Доставка',
-    value: 'г. Сыктывкар'
-  },
-  {
-    title: 'Юридическая информация',
-    value: 'ИП Мелихов Александр Александрович'
-  }
-]
-
-// todo добавить в CMS
+import { useRemoteData } from '@aic/react-remote-data-provider'
+import FETCH_ORDER_INFO from 'api/fetch/FETCH_ORDER_INFO'
 
 const ContactsBlock = ({ className }) => {
+  const {
+    response
+  } = useRemoteData(FETCH_ORDER_INFO, [])
+
   return (
     <div className={cn(css.flex, className)}>
       {
-        contacts.map(({ title, value }, key) => (
+        _.map(response, ({ title, value }, key) => (
           <div className={css.contact} key={key}>
             <div className={css.title}>{title}</div>
             {

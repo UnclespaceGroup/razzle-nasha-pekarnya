@@ -6,6 +6,7 @@ import Container from 'components/Container/Container'
 import css from './bannerSlider.module.scss'
 import BgImage from 'components/BgImage/BgImage'
 import Button from 'components/Button/Button'
+import { scrollWindowTo } from 'utils/scrollWindowTo'
 
 const params = {
   autoplay: {
@@ -20,6 +21,10 @@ const params = {
   loop: true,
   rebuildOnUpdate: true,
   shouldSwiperUpdate: true
+}
+
+const handleScroll = () => {
+  scrollWindowTo('slider-anchor')
 }
 
 const BannerSlider = ({ items }) => {
@@ -37,13 +42,21 @@ const BannerSlider = ({ items }) => {
               <div className={css.wrapper}>
                 <h2 className={css.title}>{title}</h2>
                 <div className={css.text}>{text}</div>
-                {!!link && <Button variant='yellow' className={css.btn} to={link}>Подробнее</Button>}
+                <Button
+                  variant='yellow'
+                  className={css.btn}
+                  to={link}
+                  onClick={!link && handleScroll}
+                >
+                  Подробнее
+                </Button>
               </div>
             </Container>
             <BgImage className={css.img} img={img} />
           </span>
         ))}
       </Swiper>
+      <span id='slider-anchor' />
     </span>
   )
 }
