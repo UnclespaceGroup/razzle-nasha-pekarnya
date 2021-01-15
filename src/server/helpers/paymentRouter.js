@@ -22,7 +22,7 @@ const paymentRouter = router.get('/', (req, res) => {
       password: SBER_PASSWORD,
       amount,
       orderNumber: Math.random(), // todo придумать логику для создания ключа
-      returnUrl: 'http://localhost:3000/order-form/success'
+      returnUrl: 'http://localhost:3000/order-form'
     }
   }).then(response => {
     res.send({
