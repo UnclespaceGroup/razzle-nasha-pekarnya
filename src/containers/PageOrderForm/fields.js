@@ -20,7 +20,7 @@ export const fields = {
     name: 'name',
     label: 'Ваше имя',
     placeholder: 'Иван Петров',
-    // validate: required
+    validate: required
   },
   region: {
     name: 'region',
@@ -32,14 +32,14 @@ export const fields = {
     label: 'Улица',
     placeholder: 'Коммунистическая',
     prompt: 'Введите вашу улицу',
-    // validate: required
+    validate: required
   },
   house: {
     name: 'house',
     label: 'Дом',
     placeholder: '24',
     prompt: '',
-    // validate: required
+    validate: required
   },
   frontDoor: {
     name: 'frontDoor',
@@ -47,26 +47,26 @@ export const fields = {
     placeholder: '2',
     prompt: '',
     type: 'number',
-    // validate: composeValidators(minValue(0), maxValue(15), required)
+    validate: composeValidators(minValue(0), maxValue(15), required)
   },
   floor: {
     name: 'floor',
     label: 'Этаж',
     type: 'number',
     placeholder: '12',
-    // validate: composeValidators(minValue(0), maxValue(25), required)
+    validate: composeValidators(minValue(0), maxValue(25), required)
   },
   flat: {
     name: 'flat',
     label: 'Квартира',
     type: 'number',
     placeholder: '144',
-    // validate: composeValidators(minValue(0), maxValue(1000), required)
+    validate: composeValidators(minValue(0), maxValue(1000), required)
   },
   agree: {
     name: 'agree',
     label: 'Я согласен с политикой конфиденциальности',
-    // validate: required
+    validate: required
   },
   textarea: {
     name: 'textarea',

@@ -7,6 +7,7 @@ import { PAGE_ORDER_RESULT } from 'constants/ROUTES'
 import { botUrl } from 'api/axios/instance'
 import { FORM_ERROR } from 'final-form'
 import useSearchValues from 'utils/useSearchValues'
+import { isBrowser } from 'utils'
 
 const usePageOrderForm = () => {
   const { orderId } = useSearchValues()
@@ -56,6 +57,8 @@ const usePageOrderForm = () => {
         payload: userData
       })
 
+      const webUrl = isBrowser && window.location.href
+
       const {
         data: {
           formUrl
@@ -63,7 +66,7 @@ const usePageOrderForm = () => {
       } = await axios.get('/payment', {
         params: {
           amount: price,
-          orderNumber: Math.random()
+          returnUrl: `${webUrl}/order-form`
         }
       })
 

@@ -13,7 +13,8 @@ const router = express.Router()
 const paymentRouter = router.get('/', (req, res) => {
   const {
     query: {
-      amount
+      amount,
+      returnUrl
     } = {}
   } = req
 
