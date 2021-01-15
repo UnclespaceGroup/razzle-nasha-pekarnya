@@ -6,7 +6,7 @@ import { configureStore } from 'reducers'
 import App from 'App/App'
 
 const store = configureStore(window.__PRELOADED_STATE__)
-
+// test
 hydrate(
   <Provider store={store}>
     <BrowserRouter>
