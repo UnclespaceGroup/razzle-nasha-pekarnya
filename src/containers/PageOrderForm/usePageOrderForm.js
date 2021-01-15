@@ -11,13 +11,12 @@ import useSearchValues from 'utils/useSearchValues'
 const usePageOrderForm = () => {
   const { orderId } = useSearchValues()
   const history = useHistory()
-
-  const basket = useSelector(state => state.basket)
-
   const dispatch = useDispatch()
 
-  const price = useMemo(() => getFullPrice(basket), [basket])
+  const basket = useSelector(state => state.basket)
   const userData = useSelector(state => state.userData)
+
+  const price = useMemo(() => getFullPrice(basket), [basket])
 
   // Запрос на бота и редирект на страницу успеха
   const getBotRequest = useCallback(async () => {
@@ -63,7 +62,7 @@ const usePageOrderForm = () => {
         } = {}
       } = await axios.get('/payment', {
         params: {
-          amount: 3000,
+          amount: price,
           orderNumber: Math.random()
         }
       })
@@ -74,7 +73,7 @@ const usePageOrderForm = () => {
     } catch (e) {
       return { [FORM_ERROR]: 'error' }
     }
-  }, [])
+  }, [price])
 
   return {
     onSubmit,
