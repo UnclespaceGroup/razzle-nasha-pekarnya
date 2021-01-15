@@ -20,6 +20,21 @@ const usePageOrderForm = () => {
     try {
       const orders = Object.values(basket)
 
+      const {
+        data: {
+          formUrl
+        } = {}
+      } = await axios.get('/payment', {
+        params: {
+          amount: 3000,
+          orderNumber: Math.random()
+        }
+      })
+
+      if (formUrl) {
+        document.location.href = formUrl
+      }
+
       await axios.post(botUrl, {
         orders,
         userData,

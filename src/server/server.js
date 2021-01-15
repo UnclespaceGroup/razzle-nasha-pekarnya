@@ -7,6 +7,7 @@ import getDeviceSize from 'server/helpers/getDeviceSize'
 import { configureStore } from 'reducers'
 import serialize from 'serialize-javascript'
 import App from 'App/App'
+import paymentRouter from 'server/helpers/paymentRouter'
 
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST)
 
@@ -14,6 +15,7 @@ const server = express()
 server
   .disable('x-powered-by')
   .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
+  .use('/payment', paymentRouter)
   .get('/*', (req, res) => {
     const context = {}
     const device = getDeviceSize(req)

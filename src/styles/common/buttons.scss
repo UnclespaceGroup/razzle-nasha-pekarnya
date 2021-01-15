@@ -1,5 +1,6 @@
+@import "./devices";
 
-.container {
+.btn {
   white-space: nowrap;
   background-color: $colorBrown;
   display: inline-flex;
@@ -53,7 +54,7 @@
   }
 }
 
-.black {
+.btn-black {
   background-color: #4F4F4F!important;
   color: white!important;
 
@@ -62,13 +63,13 @@
   }
 }
 
-.orange {
+.btn-orange {
   background-color: #FF8C4A!important;
   color: white!important;
 }
 
-.yellow {
-  background-color: $colorYellow!important;
-  color: $colorBrown!important;;
-  font-weight: 600!important;
+.btn-yellow {
+  background-color: $colorYellow;
+  color: $colorBrown;
+  font-weight: 600;
 }
