@@ -10,7 +10,9 @@ import useSearchValues from 'utils/useSearchValues'
 import { isBrowser } from 'utils'
 
 const usePageOrderForm = () => {
+  // Появляется когда идет редирект со страницы оплаты
   const { orderId } = useSearchValues()
+
   const history = useHistory()
   const dispatch = useDispatch()
 
@@ -34,9 +36,7 @@ const usePageOrderForm = () => {
       })
 
       history.push(PAGE_ORDER_RESULT, {
-        orders,
-        price,
-        data: userData
+        orderId
       })
     } catch (e) {
       console.log(e)
@@ -57,6 +57,7 @@ const usePageOrderForm = () => {
         payload: userData
       })
 
+      // Берём текущий маршрут (тк перенаправлять нужно обратно сюда)
       const webUrl = isBrowser && window.location.href
 
       const {
@@ -66,10 +67,11 @@ const usePageOrderForm = () => {
       } = await axios.get('/payment', {
         params: {
           amount: price,
-          returnUrl: `${webUrl}/order-form`
+          returnUrl: webUrl
         }
       })
 
+      // В случае успеха перенаправляем на страницу платежа
       if (formUrl) {
         document.location.href = formUrl
       }

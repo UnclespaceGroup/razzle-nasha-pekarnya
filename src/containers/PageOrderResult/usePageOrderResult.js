@@ -1,13 +1,29 @@
+import { useSelector } from 'react-redux'
+import { useMemo } from 'react'
+import { getFullPrice } from 'utils/priceUtils'
 import { useLocation } from 'react-router'
 
 const usePageOrderResult = () => {
-  const { state: { price, orders = [], data = {} } = {} } = useLocation()
+  // orderId
+  const {
+    state: {
+      orderId
+    } = {}
+  } = useLocation()
 
+  // Список покупок
+  const basket = useSelector(state => state.basket)
+  const orders = useMemo(() => Object.values(basket), [basket])
+
+  // Общая цена
+  const price = useMemo(() => getFullPrice(basket), [basket])
+
+  // Данные пользователя
   const {
     floor, frontDoor, house, textarea, street, name
-  } = data
+  } = useSelector(state => state.userData)
 
-  const contacts = [
+  const contacts = useMemo(() => ([
     {
       title: 'Ваше имя',
       value: name
@@ -18,7 +34,7 @@ const usePageOrderResult = () => {
     },
     {
       title: 'Комментарий',
-      value: textarea
+      value: textarea || 'Нет комментария'
     },
     {
       title: 'Ваш заказ',
@@ -26,9 +42,13 @@ const usePageOrderResult = () => {
     },
     {
       title: 'Оплата',
-      value: 'По карте курьеру'
+      value: 'По карте (была произведена)'
+    },
+    {
+      title: 'Номер заказа',
+      value: orderId || 'Без номера заказа'
     }
-  ]
+  ]), [orders, orderId])
 
   const priceData = { title: 'Итого', value: `${price}.00 руб.` }
 

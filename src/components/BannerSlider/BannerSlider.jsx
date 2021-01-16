@@ -46,7 +46,7 @@ const BannerSlider = ({ items }) => {
                   variant='yellow'
                   className={css.btn}
                   to={link}
-                  onClick={!link && handleScroll}
+                  onClick={link ? undefined : handleScroll}
                 >
                   Подробнее
                 </Button>
