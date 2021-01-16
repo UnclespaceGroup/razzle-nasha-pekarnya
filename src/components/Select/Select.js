@@ -46,6 +46,7 @@ const Select = ({
           options={options}
           type={type}
           value={value}
+          isSearchable={false}
           onChange={handleChange}
         />
       </div>
