@@ -12,7 +12,7 @@ export default function UserDataReducer (state = initialState, action) {
     }
 
     case 'CLEAR_USER_DATA': {
-      sessionStorage.setItem(USER_DATA, undefined)
+      sessionStorage.setItem(USER_DATA, JSON.stringify({}))
       return {}
     }
 

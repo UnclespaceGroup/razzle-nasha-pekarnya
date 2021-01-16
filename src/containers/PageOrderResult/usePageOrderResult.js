@@ -1,9 +1,11 @@
-import { useSelector } from 'react-redux'
-import { useMemo } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useMemo, useEffect } from 'react'
 import { getFullPrice } from 'utils/priceUtils'
 import { useLocation } from 'react-router'
 
 const usePageOrderResult = () => {
+  const dispatch = useDispatch()
+
   // orderId
   const {
     state: {
@@ -20,8 +22,25 @@ const usePageOrderResult = () => {
 
   // Данные пользователя
   const {
-    floor, frontDoor, house, textarea, street, name
+    floor,
+    frontDoor,
+    house,
+    textarea,
+    street,
+    name
   } = useSelector(state => state.userData)
+
+  // Очищаем данные после того как покинем страницу
+  useEffect(() => {
+    return () => {
+      dispatch({
+        type: 'CLEAR_BASKET'
+      })
+      dispatch({
+        type: 'CLEAR_USER_DATA'
+      })
+    }
+  }, [])
 
   const contacts = useMemo(() => ([
     {

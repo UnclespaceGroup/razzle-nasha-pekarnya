@@ -36,7 +36,8 @@ export default function BasketReducer (state = initialState, action) {
       return _state
     }
 
-    case 'CLEAR': {
+    case 'CLEAR_BASKET': {
+      sessionStorage.setItem(PURCHASES, JSON.stringify({}))
       return {}
     }
 

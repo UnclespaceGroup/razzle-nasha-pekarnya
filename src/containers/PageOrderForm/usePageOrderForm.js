@@ -21,34 +21,30 @@ const usePageOrderForm = () => {
 
   const price = useMemo(() => getFullPrice(basket), [basket])
 
-  // Запрос на бота и редирект на страницу успеха
-  const getBotRequest = useCallback(async () => {
-    try {
-      const orders = Object.values(basket)
-
-      await axios.post(botUrl, {
-        orders,
-        userData,
-        price
-      })
-      dispatch({
-        type: 'CLEAR'
-      })
-
-      history.push(PAGE_ORDER_RESULT, {
-        orderId
-      })
-    } catch (e) {
-      console.log(e)
-    }
-  }, [orderId, userData])
-
   // Если в параметре есть orderId - надо сделать запрос на бота и перейти на страницу успешной оплаты
   useEffect(() => {
+    // Запрос на бота и редирект на страницу успеха
     if (orderId) {
+      const getBotRequest = async () => {
+        try {
+          const orders = Object.values(basket)
+
+          await axios.post(botUrl, {
+            orders,
+            userData,
+            price
+          })
+
+          history.push(PAGE_ORDER_RESULT, {
+            orderId
+          })
+        } catch (e) {
+          console.log(e)
+        }
+      }
       getBotRequest()
     }
-  }, [orderId])
+  }, [orderId, userData, basket])
 
   const onSubmit = useCallback(async userData => {
     try {
