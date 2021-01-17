@@ -16,8 +16,10 @@ import Attention from 'components/Attention/Attention'
 import CheckBox from 'components/CheckBox/CheckBox'
 import TextArea from 'components/TextArea/TextArea'
 import Helmet from 'components/Helmet/Helmet'
-import Select from 'components/Select/Select'
 import { fields } from 'containers/PageOrderForm/fields'
+import FieldRegion from 'containers/PageOrderForm/FieldRegion/FieldRegion'
+import Delivery from 'containers/PageOrderForm/Delivery/Delivery'
+import Price from 'containers/PageOrderForm/Price/Price'
 
 const PageOrderForm = () => {
   const { form: formMeta } = useMeta()
@@ -26,9 +28,6 @@ const PageOrderForm = () => {
   return (
     <Form
       onSubmit={onSubmit}
-      initialValues={{
-        region: 'В пределах города'
-      }}
       render={({
         handleSubmit,
         submitFailed,
@@ -49,10 +48,10 @@ const PageOrderForm = () => {
             <div className={css.subtitle}>Адрес доставки</div>
             <ul className={css.rowFields}>
               <li className={css.bigField}>
-                <Field
-                  {...fields.region}
-                  component={Select}
-                />
+                <FieldRegion />
+              </li>
+              <li className={css.field}>
+                <Delivery />
               </li>
               <li className={css.bigField}>
                 <Field
@@ -100,7 +99,7 @@ const PageOrderForm = () => {
               >
                 {submitting ? 'Отправка...' : 'Заказать'}
               </Button>
-              <span className={css.price}>{price}.00 р</span>
+              <Price />
             </div>
             {submitFailed &&
               <Attention

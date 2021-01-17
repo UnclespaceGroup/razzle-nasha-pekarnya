@@ -1,31 +1,11 @@
 import { composeValidators, maxValue, minValue, required } from 'utils/validators'
 
-const regionsOptions = [
-  {
-    value: 'В пределах города',
-    label: 'В пределах города'
-  },
-  {
-    value: 'Чов',
-    label: 'Чов'
-  },
-  {
-    value: 'Эжва',
-    label: 'Эжва'
-  }
-]
-
 export const fields = {
   name: {
     name: 'name',
     label: 'Ваше имя',
     placeholder: 'Иван Петров',
     validate: required
-  },
-  region: {
-    name: 'region',
-    label: 'Район',
-    options: regionsOptions
   },
   street: {
     name: 'street',

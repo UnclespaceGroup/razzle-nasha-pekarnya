@@ -3,9 +3,9 @@ import cn from 'classnames'
 import PropTypes from 'prop-types'
 import css from './attention.module.scss'
 
-const Attention = ({ variant, text, title }) => {
+const Attention = ({ variant, text, title, className }) => {
   return (
-    <div className={cn(css.container, css[variant])}>
+    <div className={cn(css.container, css[variant], className)}>
       {title && <b>{title}</b>}
       <div>{text}</div>
     </div>

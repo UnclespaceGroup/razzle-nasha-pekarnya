@@ -27,7 +27,8 @@ const usePageOrderResult = () => {
     house,
     textarea,
     street,
-    name
+    name,
+    delivery
   } = useSelector(state => state.userData)
 
   // Очищаем данные после того как покинем страницу
@@ -64,12 +65,16 @@ const usePageOrderResult = () => {
       value: 'По карте (была произведена)'
     },
     {
+      title: 'Доставка',
+      value: delivery ? `${delivery} руб.` : 'Бесплатно'
+    },
+    {
       title: 'Номер заказа',
       value: orderId || 'Без номера заказа'
     }
   ]), [orders, orderId])
 
-  const priceData = { title: 'Итого', value: `${price}.00 руб.` }
+  const priceData = { title: 'Итого', value: `${+price + +delivery}.00 руб.` }
 
   return {
     contacts,

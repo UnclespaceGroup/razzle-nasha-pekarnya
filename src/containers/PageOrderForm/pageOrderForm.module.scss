@@ -79,18 +79,6 @@ $bigFieldWidth: 66.66%;
   font-size: 4.8rem;
 }
 
-.price {
-  color: #828282;
-  font-size: 3.6rem;
-  margin-left: 4.2rem;
-  font-weight: bold;
-
-  @include media-mobile {
-    margin-bottom: 2.4rem;
-  }
-}
-
-
 .footer {
   margin-top: 6.4rem;
   display: flex;
