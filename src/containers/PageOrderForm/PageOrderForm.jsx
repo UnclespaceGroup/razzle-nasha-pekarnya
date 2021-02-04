@@ -23,7 +23,7 @@ import Price from 'containers/PageOrderForm/Price/Price'
 
 const PageOrderForm = () => {
   const { form: formMeta } = useMeta()
-  const { onSubmit, price } = usePageOrderForm()
+  const { onSubmit } = usePageOrderForm()
 
   return (
     <Form
@@ -43,6 +43,12 @@ const PageOrderForm = () => {
               <Field
                 component={Input}
                 {...fields.name}
+              />
+            </div>
+            <div className={css.fieldName}>
+              <Field
+                component={Input}
+                {...fields.phone}
               />
             </div>
             <div className={css.subtitle}>Адрес доставки</div>
