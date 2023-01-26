@@ -55,6 +55,6 @@
     "sass-loader": "^9.0.2",
     "serialize-javascript": "^4.0.0",
     "swiper": "^6.0.4",
-    "ua-parser-js": "^0.7.21"
+    "ua-parser-js": "^0.7.33"
   }
 }
